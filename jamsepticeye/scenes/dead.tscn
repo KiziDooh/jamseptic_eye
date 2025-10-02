@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://020m0jirat0i"]
+
+[ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="1_8f3xj"]
+[ext_resource type="Texture2D" uid="uid://ds0jrjrgar4jy" path="res://visuals/2d/death/pixil-layer-1.png" id="2_unegr"]
+[ext_resource type="Texture2D" uid="uid://caomfilw822wi" path="res://visuals/2d/death/pixil-layer-4.png" id="3_q2olc"]
+[ext_resource type="Texture2D" uid="uid://46as4erugbmk" path="res://visuals/2d/death/pixil-layer-2.png" id="4_jblhf"]
+[ext_resource type="Texture2D" uid="uid://c64l2nsq4righ" path="res://visuals/2d/death/pixil-layer-3.png" id="5_hvuha"]
+[ext_resource type="Shader" uid="uid://bsfq443vyupx2" path="res://visuals/Shaders/crt.gdshader" id="6_jblhf"]
+[ext_resource type="FontFile" uid="uid://buiasug3qyfrc" path="res://visuals/Fonts/boldpixels/BoldPixels.ttf" id="7_hvuha"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hvuha"]
+shader = ExtResource("6_jblhf")
+shader_parameter/tex = ExtResource("1_8f3xj")
+shader_parameter/mask_type = 1
+shader_parameter/curve = 0.0
+shader_parameter/sharpness = 0.6666667
+shader_parameter/color_offset = 2.3749999966682367e-08
+shader_parameter/mask_brightness = 1.0
+shader_parameter/scanline_brightness = 1.0
+shader_parameter/min_scanline_thickness = 0.5
+shader_parameter/aspect = 0.75
+shader_parameter/wobble_strength = 0.550000026125
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PixilLayer0" type="Sprite2D" parent="."]
+position = Vector2(250.00002, 663.00006)
+scale = Vector2(0.65410256, 0.85410255)
+texture = ExtResource("1_8f3xj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PixilLayer1" type="Sprite2D" parent="."]
+position = Vector2(4.0000005, -30)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_unegr")
+
+[node name="PixilLayer4" type="Sprite2D" parent="PixilLayer1"]
+position = Vector2(53.333435, 66.66626)
+texture = ExtResource("3_q2olc")
+
+[node name="PixilLayer2" type="Sprite2D" parent="."]
+position = Vector2(-337, 99)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_jblhf")
+
+[node name="PixilLayer3" type="Sprite2D" parent="PixilLayer2"]
+position = Vector2(-15.384621, -76.923065)
+texture = ExtResource("5_hvuha")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_hvuha")
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -982.0
+offset_top = -320.0
+offset_right = 786.0
+offset_bottom = 1135.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0.75350153, 0.16181213, 0.41568628)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -501.0
+offset_top = 140.0
+offset_right = 590.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0.13333334, 0.69411767, 0.29803923, 1)
+theme_override_fonts/font = ExtResource("7_hvuha")
+theme_override_font_sizes/font_size = 40
+text = "Death has decided to give you an opurtunity. Take it?"
