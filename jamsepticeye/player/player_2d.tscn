@@ -1,29 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://caumklby5mno2"]
+[gd_scene load_steps=9 format=3 uid="uid://caumklby5mno2"]
 
 [ext_resource type="Script" uid="uid://xvtjx3hetoei" path="res://script/player_2d.gd" id="1_sy00s"]
-[ext_resource type="Texture2D" uid="uid://ds0jrjrgar4jy" path="res://visuals/2d/death/pixil-layer-1.png" id="2_p3026"]
+[ext_resource type="Texture2D" uid="uid://dnc7m6pi35mb1" path="res://visuals/2d/20251002_082737.jpg" id="2_u8lj1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftsyd"]
+atlas = ExtResource("2_u8lj1")
+region = Rect2(1100, 0, 366, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8lj1"]
+atlas = ExtResource("2_u8lj1")
+region = Rect2(1466, 0, 366, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vfq7"]
+atlas = ExtResource("2_u8lj1")
+region = Rect2(1100, 0, 366, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r7w4"]
+atlas = ExtResource("2_u8lj1")
+region = Rect2(734, 0, 366, 1200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7fikk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_p3026")
+"texture": SubResource("AtlasTexture_ftsyd")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8lj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vfq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r7w4")
+}],
+"loop": true,
+"name": &"walk",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n5ovx"]
-radius = 12.369317
+radius = 13.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_sy00s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.01, 0.01)
+position = Vector2(1.0000005, -28)
+scale = Vector2(0.10490196, 0.06390212)
 sprite_frames = SubResource("SpriteFrames_7fikk")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
+position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_n5ovx")
