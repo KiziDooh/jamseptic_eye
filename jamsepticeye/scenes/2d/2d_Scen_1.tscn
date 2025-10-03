@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmcseqftxe3nv"]
+[gd_scene load_steps=6 format=3 uid="uid://cmcseqftxe3nv"]
 
 [ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="1_uepm4"]
 [ext_resource type="Texture2D" uid="uid://n3442jx8gxbc" path="res://visuals/2d/place background9.png" id="2_152d6"]
+[ext_resource type="PackedScene" uid="uid://csamlfeu82i2e" path="res://scenes/DialogueBox.tscn" id="3_152d6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig6mx"]
 size = Vector2(1130, 114)
@@ -9,6 +10,7 @@ size = Vector2(1130, 114)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ig6mx"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(578, 324)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_uepm4")]
 scale = Vector2(3.89, 3.89)
@@ -44,3 +46,9 @@ z_index = -1
 position = Vector2(19, -67.999985)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_152d6")
+
+[node name="DialogueBox" parent="." instance=ExtResource("3_152d6")]
+offset_left = -205.0
+offset_top = -153.0
+offset_right = -205.0
+offset_bottom = -153.0
