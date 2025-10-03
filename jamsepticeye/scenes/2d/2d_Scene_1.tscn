@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4bpge67gygc3"]
+[gd_scene load_steps=11 format=3 uid="uid://c4bpge67gygc3"]
 
 [ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="1_uepm4"]
-[ext_resource type="Texture2D" uid="uid://n3442jx8gxbc" path="res://visuals/2d/room/place background9.png" id="2_152d6"]
-[ext_resource type="Texture2D" uid="uid://diji6gu4wtq6q" path="res://visuals/2d/room/couch.png" id="3_152d6"]
 [ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="4_00eol"]
 [ext_resource type="Texture2D" uid="uid://c8b36a5mpoc31" path="res://visuals/2d/room/BoomBox_table.png" id="5_ecguf"]
 [ext_resource type="Texture2D" uid="uid://bxulv1x4ei1je" path="res://visuals/2d/room/bed.png" id="6_f11fe"]
+[ext_resource type="Texture2D" uid="uid://d32g2y1ssy78m" path="res://visuals/2d/room/better_couch.png" id="7_vshoq"]
+[ext_resource type="Texture2D" uid="uid://clqclpjsaoxpx" path="res://visuals/2d/room/blue_chair(1).png" id="8_b0opi"]
+[ext_resource type="Texture2D" uid="uid://cnndiy847gmry" path="res://visuals/2d/room/table.png" id="9_ju3lv"]
+[ext_resource type="Texture2D" uid="uid://clcwdoqcxi5mu" path="res://visuals/2d/room/the_chair.png" id="10_t8y1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig6mx"]
 size = Vector2(2574, 114)
@@ -19,14 +21,14 @@ z_index = 2
 scale = Vector2(3.89, 3.89)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(0, 3)
+position = Vector2(0, -40)
 scale = Vector2(0.2570694, 0.2570694)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 181)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -10)
+position = Vector2(0, -80)
 shape = SubResource("RectangleShape2D_ig6mx")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -54,20 +56,6 @@ position = Vector2(-18, 304)
 color = Color(0.8994397, 0.8452053, 0.5663644, 1)
 energy = 0.29
 
-[node name="PlaceBackground9" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0.99116415, 0.99116427, 0.99116415, 1)
-z_index = -1
-position = Vector2(19, -67.999985)
-scale = Vector2(0.68, 0.68)
-texture = ExtResource("2_152d6")
-
-[node name="Couch" type="Sprite2D" parent="."]
-z_index = 3
-position = Vector2(-287, 141)
-scale = Vector2(0.47777778, 0.48023063)
-texture = ExtResource("3_152d6")
-
 [node name="PixilLayer0" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(-256, -187)
@@ -82,3 +70,20 @@ texture = ExtResource("5_ecguf")
 position = Vector2(-959, -14)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("6_f11fe")
+
+[node name="BetterCouch" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(-448, 36)
+texture = ExtResource("7_vshoq")
+
+[node name="BlueChair(1)" type="Sprite2D" parent="."]
+position = Vector2(546, -8)
+texture = ExtResource("8_b0opi")
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(651, -28)
+texture = ExtResource("9_ju3lv")
+
+[node name="TheChair" type="Sprite2D" parent="."]
+position = Vector2(780, -28)
+texture = ExtResource("10_t8y1c")
