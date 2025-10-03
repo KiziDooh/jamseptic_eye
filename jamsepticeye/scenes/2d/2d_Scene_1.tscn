@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c4bpge67gygc3"]
+[gd_scene load_steps=16 format=3 uid="uid://c4bpge67gygc3"]
 
 [ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="1_uepm4"]
 [ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="4_00eol"]
@@ -17,8 +17,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig6mx"]
 size = Vector2(2574, 114)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ig6mx"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -47,17 +45,11 @@ position = Vector2(916, 0)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_ig6mx")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-119.99999, 217.99998)
-scale = Vector2(2.64, 2.64)
-color = Color(1, 1, 0, 1)
-texture = SubResource("CompressedTexture2D_ig6mx")
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.00184107, 0.0018410675, 0.0018410693, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 position = Vector2(-18, 304)
 color = Color(0.8994397, 0.8452053, 0.5663644, 1)
 energy = 0.29
@@ -130,3 +122,9 @@ texture = ExtResource("13_p14iq")
 [node name="BlueChairSilhouette" type="Sprite2D" parent="Object_silhouettes"]
 position = Vector2(545, -7)
 texture = ExtResource("14_kyuo2")
+
+[node name="DirectionalLight2D2" type="DirectionalLight2D" parent="."]
+position = Vector2(-3, -13)
+energy = 0.27
+range_z_min = 30
+range_z_max = 30
