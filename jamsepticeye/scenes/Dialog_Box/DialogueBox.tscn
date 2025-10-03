@@ -1,34 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://hqx7fa1xv36h"]
+[gd_scene load_steps=7 format=3 uid="uid://csamlfeu82i2e"]
 
-[ext_resource type="Script" uid="uid://pc2fykggafuw" path="res://script/dialogue_box.gd" id="1_o62ju"]
-[ext_resource type="Texture2D" uid="uid://c17krtc6m37un" path="res://visuals/UI/TextBoxPNG.png" id="2_kbnfh"]
-[ext_resource type="FontFile" uid="uid://dlber2wwvqabu" path="res://visuals/Fonts/boldpixels/ank.ttf" id="3_kbnfh"]
-[ext_resource type="FontFile" uid="uid://dc4demacjh02" path="res://visuals/Fonts/boldpixels/Scabber-q2Mn0.ttf" id="3_v1ie3"]
+[ext_resource type="Script" uid="uid://pc2fykggafuw" path="res://script/dialogue_box.gd" id="1_1n5wf"]
+[ext_resource type="FontFile" uid="uid://dc4demacjh02" path="res://visuals/Fonts/boldpixels/Scabber-q2Mn0.ttf" id="1_r2og1"]
+[ext_resource type="Texture2D" uid="uid://c17krtc6m37un" path="res://visuals/UI/TextBoxPNG.png" id="2_giuoe"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1n5wf"]
-texture = ExtResource("2_kbnfh")
+texture = ExtResource("2_giuoe")
 
-[sub_resource type="Theme" id="Theme_v1ie3"]
-default_font = ExtResource("3_kbnfh")
+[sub_resource type="Theme" id="Theme_giuoe"]
+default_font = ExtResource("1_r2og1")
 default_font_size = 30
 
-[sub_resource type="Theme" id="Theme_ka2gc"]
-default_font = ExtResource("3_kbnfh")
+[sub_resource type="Theme" id="Theme_1n5wf"]
+default_font = ExtResource("1_r2og1")
 default_font_size = 20
 Button/colors/icon_disabled_color = Color(0, 0, 0, 0.4)
 Label/colors/font_color = Color(0.37911993, 0.37791687, 0.37463874, 1)
 Panel/styles/panel = SubResource("StyleBoxTexture_1n5wf")
 
-[node name="Dialogue Box 2" type="Control"]
+[node name="Dialogue Box" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_o62ju")
+script = ExtResource("1_1n5wf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -51,16 +48,16 @@ offset_bottom = 164.255
 
 [node name="Speaker Label" type="Label" parent="CanvasLayer/MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_v1ie3")
+theme = SubResource("Theme_giuoe")
 text = "Meeeee"
 
 [node name="Dialogue Label" type="RichTextLabel" parent="CanvasLayer/MarginContainer/Panel/VBoxContainer"]
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
-theme = SubResource("Theme_ka2gc")
+theme = SubResource("Theme_1n5wf")
 bbcode_enabled = true
-text = "Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow"
+text = "Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow Meow"
 
 [node name="Button" type="Button" parent="CanvasLayer/MarginContainer/Panel"]
 layout_mode = 1
@@ -75,7 +72,7 @@ offset_right = -12.0
 offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("3_v1ie3")
+theme_override_fonts/font = ExtResource("1_r2og1")
 text = ">"
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/Panel/Button" to="." method="_on_button_pressed"]

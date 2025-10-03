@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://csamlfeu82i2e"]
+[gd_scene load_steps=7 format=3 uid="uid://bkdbsiklredge"]
 
 [ext_resource type="Script" uid="uid://pc2fykggafuw" path="res://script/dialogue_box.gd" id="1_1n5wf"]
 [ext_resource type="FontFile" uid="uid://dc4demacjh02" path="res://visuals/Fonts/boldpixels/Scabber-q2Mn0.ttf" id="1_r2og1"]
