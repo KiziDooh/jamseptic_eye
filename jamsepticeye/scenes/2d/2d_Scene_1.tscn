@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4bpge67gygc3"]
+[gd_scene load_steps=17 format=3 uid="uid://c4bpge67gygc3"]
 
 [ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="1_uepm4"]
 [ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="4_00eol"]
@@ -6,8 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://bxulv1x4ei1je" path="res://visuals/2d/room/bed.png" id="6_f11fe"]
 [ext_resource type="Texture2D" uid="uid://d32g2y1ssy78m" path="res://visuals/2d/room/better_couch.png" id="7_vshoq"]
 [ext_resource type="Texture2D" uid="uid://clqclpjsaoxpx" path="res://visuals/2d/room/blue_chair(1).png" id="8_b0opi"]
+[ext_resource type="Texture2D" uid="uid://dojoawwkw6ccb" path="res://visuals/2d/room/room_silhouette/bed_silhouette.png" id="9_dj7gc"]
 [ext_resource type="Texture2D" uid="uid://cnndiy847gmry" path="res://visuals/2d/room/table.png" id="9_ju3lv"]
+[ext_resource type="Texture2D" uid="uid://beve81ownsdn4" path="res://visuals/2d/room/room_silhouette/boombox_silhouette.png" id="10_5psds"]
 [ext_resource type="Texture2D" uid="uid://clcwdoqcxi5mu" path="res://visuals/2d/room/the_chair.png" id="10_t8y1c"]
+[ext_resource type="Texture2D" uid="uid://dnpchwtmxcdl2" path="res://visuals/2d/room/room_silhouette/couch_silhouette.png" id="11_6hbby"]
+[ext_resource type="Texture2D" uid="uid://b0hvi7x5qfb7x" path="res://visuals/2d/room/room_silhouette/table_silhouette.png" id="12_3tu0n"]
+[ext_resource type="Texture2D" uid="uid://xkreqq3dswu3" path="res://visuals/2d/room/room_silhouette/THE_CHAIR_silhouette.png" id="13_p14iq"]
+[ext_resource type="Texture2D" uid="uid://bqek8nkx6rmfo" path="res://visuals/2d/room/room_silhouette/blue_chair_silhouette.png" id="14_kyuo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig6mx"]
 size = Vector2(2574, 114)
@@ -61,29 +67,66 @@ z_index = -3
 position = Vector2(-256, -187)
 texture = ExtResource("4_00eol")
 
-[node name="BoomBoxTable" type="Sprite2D" parent="."]
+[node name="Objects" type="Node" parent="."]
+
+[node name="BoomBoxTable" type="Sprite2D" parent="Objects"]
+visible = false
 z_index = 1
 position = Vector2(-1074, -33)
 texture = ExtResource("5_ecguf")
 
-[node name="Bed" type="Sprite2D" parent="."]
+[node name="Bed" type="Sprite2D" parent="Objects"]
+visible = false
 position = Vector2(-959, -14)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("6_f11fe")
 
-[node name="BetterCouch" type="Sprite2D" parent="."]
+[node name="BetterCouch" type="Sprite2D" parent="Objects"]
+visible = false
 z_index = 3
 position = Vector2(-448, 36)
 texture = ExtResource("7_vshoq")
 
-[node name="BlueChair(1)" type="Sprite2D" parent="."]
+[node name="BlueChair(1)" type="Sprite2D" parent="Objects"]
+visible = false
 position = Vector2(546, -8)
 texture = ExtResource("8_b0opi")
 
-[node name="Table" type="Sprite2D" parent="."]
+[node name="Table" type="Sprite2D" parent="Objects"]
+visible = false
 position = Vector2(651, -28)
 texture = ExtResource("9_ju3lv")
 
-[node name="TheChair" type="Sprite2D" parent="."]
+[node name="TheChair" type="Sprite2D" parent="Objects"]
+visible = false
 position = Vector2(780, -28)
 texture = ExtResource("10_t8y1c")
+
+[node name="Object_silhouettes" type="Node" parent="."]
+
+[node name="BedSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+position = Vector2(-961, -13)
+scale = Vector2(1.215, 1.215)
+texture = ExtResource("9_dj7gc")
+
+[node name="BoomboxSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+position = Vector2(-1096, -34)
+texture = ExtResource("10_5psds")
+
+[node name="CouchSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+z_index = 3
+position = Vector2(-450, 72)
+texture = ExtResource("11_6hbby")
+
+[node name="TableSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+position = Vector2(651, -29)
+texture = ExtResource("12_3tu0n")
+
+[node name="TheChairSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+z_index = 2
+position = Vector2(210, 13)
+texture = ExtResource("13_p14iq")
+
+[node name="BlueChairSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+position = Vector2(545, -7)
+texture = ExtResource("14_kyuo2")
