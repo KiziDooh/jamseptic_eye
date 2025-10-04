@@ -1,0 +1,280 @@
+[gd_scene load_steps=33 format=3 uid="uid://c4bpge67gygc3"]
+
+[ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="1_83ula"]
+[ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="2_m7qgy"]
+[ext_resource type="Texture2D" uid="uid://c8b36a5mpoc31" path="res://visuals/2d/room/objects/BoomBox_table.png" id="3_5jspa"]
+[ext_resource type="Texture2D" uid="uid://bxulv1x4ei1je" path="res://visuals/2d/room/objects/bed.png" id="4_3s6hq"]
+[ext_resource type="Texture2D" uid="uid://d32g2y1ssy78m" path="res://visuals/2d/room/objects/better_couch.png" id="5_vrigg"]
+[ext_resource type="Texture2D" uid="uid://clqclpjsaoxpx" path="res://visuals/2d/room/objects/blue_chair(1).png" id="6_eymyt"]
+[ext_resource type="Texture2D" uid="uid://cnndiy847gmry" path="res://visuals/2d/room/objects/table.png" id="7_djouk"]
+[ext_resource type="Texture2D" uid="uid://clcwdoqcxi5mu" path="res://visuals/2d/room/objects/the_chair.png" id="8_7mxui"]
+[ext_resource type="Texture2D" uid="uid://oi1omvfgmcor" path="res://visuals/2d/room/room_silhouette/tv_off.png" id="9_tnmaq"]
+[ext_resource type="Texture2D" uid="uid://yjhi1vfnjf4g" path="res://visuals/2d/room/room_silhouette/tv_glow_2.png" id="10_wp2p5"]
+[ext_resource type="Texture2D" uid="uid://6jbl0qy7ymq3" path="res://visuals/2d/room/room_silhouette/tv_glow_1.png" id="11_85avj"]
+[ext_resource type="Texture2D" uid="uid://cscjnkk44r2hu" path="res://visuals/2d/room/objects/calender.png" id="11_tnmaq"]
+[ext_resource type="Texture2D" uid="uid://dojoawwkw6ccb" path="res://visuals/2d/room/room_silhouette/bed_silhouette.png" id="12_05b6d"]
+[ext_resource type="Texture2D" uid="uid://beve81ownsdn4" path="res://visuals/2d/room/room_silhouette/boombox_silhouette.png" id="13_u4cdg"]
+[ext_resource type="Texture2D" uid="uid://dnpchwtmxcdl2" path="res://visuals/2d/room/room_silhouette/couch_silhouette.png" id="14_4pbbw"]
+[ext_resource type="Texture2D" uid="uid://b0hvi7x5qfb7x" path="res://visuals/2d/room/room_silhouette/table_silhouette.png" id="15_a0vb0"]
+[ext_resource type="Texture2D" uid="uid://xkreqq3dswu3" path="res://visuals/2d/room/room_silhouette/THE_CHAIR_silhouette.png" id="16_i0dgb"]
+[ext_resource type="Texture2D" uid="uid://bqek8nkx6rmfo" path="res://visuals/2d/room/room_silhouette/blue_chair_silhouette.png" id="17_1wvc5"]
+[ext_resource type="Texture2D" uid="uid://8tk0t82jjakn" path="res://visuals/2d/room/room_silhouette/tv_silhouette.png" id="18_mf53t"]
+[ext_resource type="Texture2D" uid="uid://11wvqlee7yp" path="res://visuals/2d/room/actual room/floor.png" id="19_3s6hq"]
+[ext_resource type="Texture2D" uid="uid://yci00hy3cg0j" path="res://visuals/2d/room/actual room/back_wall.png" id="20_eymyt"]
+[ext_resource type="Texture2D" uid="uid://deruondmm2tyi" path="res://visuals/2d/room/actual room/left_wall.png" id="20_vrigg"]
+[ext_resource type="Texture2D" uid="uid://dbw2c6y5h6xlv" path="res://visuals/2d/room/actual room/right_wall.png" id="21_eymyt"]
+[ext_resource type="Script" uid="uid://dayofw6wnfamd" path="res://scenes/2d/interact_3.gd" id="24_7mxui"]
+[ext_resource type="Texture2D" uid="uid://8dipsuk4my4b" path="res://visuals/UI/Interact3.png" id="24_djouk"]
+[ext_resource type="PackedScene" uid="uid://e0b2u7tpphvv" path="res://scenes/Dialog_Box/dialogue_box2.tscn" id="26_wp2p5"]
+[ext_resource type="AudioStream" uid="uid://b5olfndtvuyv2" path="res://Sounds/Musics/IYUSDFGOUSWER.mp3" id="27_wp2p5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig6mx"]
+size = Vector2(2574, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrigg"]
+size = Vector2(283.2207, 245)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djouk"]
+size = Vector2(201, 318)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mxui"]
+size = Vector2(172, 321)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnmaq"]
+size = Vector2(113, 196.5)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(480.2024, -19.218262)
+
+[node name="Player" type="Node" parent="."]
+
+[node name="CharacterBody2D" parent="Player" instance=ExtResource("1_83ula")]
+z_index = 2
+position = Vector2(-337, -32)
+scale = Vector2(0.3, 0.3)
+
+[node name="Camera2D" type="Camera2D" parent="Player/CharacterBody2D"]
+position = Vector2(0, -40)
+scale = Vector2(0.2570694, 0.2570694)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Player"]
+position = Vector2(480.2024, 161.78174)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(-81, -16)
+shape = SubResource("RectangleShape2D_ig6mx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(-1297, -6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_ig6mx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(1045, 6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_ig6mx")
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="BoomBoxTable" type="Sprite2D" parent="Objects"]
+z_index = 1
+position = Vector2(-589.7976, -42.21826)
+texture = ExtResource("3_5jspa")
+
+[node name="Bed" type="Sprite2D" parent="Objects"]
+position = Vector2(-478.7976, -33.21826)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_3s6hq")
+
+[node name="BetterCouch" type="Sprite2D" parent="Objects"]
+z_index = 3
+position = Vector2(41.202484, 61.781723)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("5_vrigg")
+
+[node name="BlueChair(1)" type="Sprite2D" parent="Objects"]
+position = Vector2(1026.2024, -27.218262)
+texture = ExtResource("6_eymyt")
+
+[node name="Table" type="Sprite2D" parent="Objects"]
+position = Vector2(1131.2024, -47.21826)
+texture = ExtResource("7_djouk")
+
+[node name="TheChair" type="Sprite2D" parent="Objects"]
+position = Vector2(1282.2024, -47.21826)
+texture = ExtResource("8_7mxui")
+
+[node name="TvOff" type="Sprite2D" parent="Objects"]
+z_index = 4
+position = Vector2(7.0023804, 184.48174)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("9_tnmaq")
+
+[node name="TvGlow2" type="Sprite2D" parent="Objects"]
+z_index = 4
+position = Vector2(7.0023804, 184.48174)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("10_wp2p5")
+
+[node name="TvGlow1" type="Sprite2D" parent="Objects"]
+z_index = 3
+position = Vector2(7.0023804, 184.48174)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("11_85avj")
+
+[node name="Calender" type="Sprite2D" parent="Objects"]
+position = Vector2(325, -139)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_tnmaq")
+
+[node name="walls" type="Node" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="walls"]
+z_index = -5
+position = Vector2(525.2024, -315.21826)
+scale = Vector2(1.9159565, 0.8812665)
+texture = ExtResource("19_3s6hq")
+
+[node name="BackWall" type="Sprite2D" parent="walls"]
+z_index = -1
+position = Vector2(701.2024, -878.21826)
+scale = Vector2(2.6872244, 2.3021998)
+texture = ExtResource("20_eymyt")
+
+[node name="LeftWall" type="Sprite2D" parent="walls"]
+position = Vector2(-335.7976, -160.21826)
+rotation = -0.00067776657
+texture = ExtResource("20_vrigg")
+
+[node name="RightWall" type="Sprite2D" parent="walls"]
+z_index = -1
+position = Vector2(1106.2024, -229.21826)
+texture = ExtResource("21_eymyt")
+
+[node name="Object_silhouettes" type="Node" parent="."]
+
+[node name="BedSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+visible = false
+position = Vector2(-961, -13)
+scale = Vector2(1.215, 1.215)
+texture = ExtResource("12_05b6d")
+
+[node name="BoomboxSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+visible = false
+position = Vector2(-1096, -34)
+texture = ExtResource("13_u4cdg")
+
+[node name="CouchSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+visible = false
+z_index = 3
+position = Vector2(-542, 72)
+texture = ExtResource("14_4pbbw")
+
+[node name="TableSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+visible = false
+position = Vector2(651, -29)
+texture = ExtResource("15_a0vb0")
+
+[node name="TheChairSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+visible = false
+z_index = 2
+position = Vector2(210, 13)
+texture = ExtResource("16_i0dgb")
+
+[node name="BlueChairSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+visible = false
+position = Vector2(545, -7)
+texture = ExtResource("17_1wvc5")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Object_silhouettes"]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="TvSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+visible = false
+z_index = 4
+position = Vector2(-336.00003, 152.00002)
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("18_mf53t")
+
+[node name="DirectionalLight2D2" type="DirectionalLight2D" parent="Object_silhouettes"]
+position = Vector2(477.2024, -32.21826)
+energy = 0.27
+range_z_min = 30
+range_z_max = 30
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Object_silhouettes"]
+visible = false
+position = Vector2(-18, 304)
+color = Color(0.8994397, 0.8452053, 0.5663644, 1)
+energy = 0.29
+
+[node name="PixilLayer0" type="Sprite2D" parent="Object_silhouettes"]
+visible = false
+z_index = -3
+position = Vector2(-256, -187)
+texture = ExtResource("2_m7qgy")
+
+[node name="interactable" type="Node" parent="."]
+
+[node name="Interact3" type="Sprite2D" parent="interactable"]
+visible = false
+z_index = 11
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("24_djouk")
+script = ExtResource("24_7mxui")
+
+[node name="Timer" type="Timer" parent="interactable/Interact3"]
+wait_time = 0.5
+one_shot = true
+
+[node name="table" type="Area2D" parent="interactable"]
+position = Vector2(1130.2024, -232.21826)
+rotation = -3.1415927
+scale = Vector2(1.2675622, -2.3668902)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/table"]
+position = Vector2(-19.168762, 99)
+shape = SubResource("RectangleShape2D_vrigg")
+
+[node name="boombox" type="Area2D" parent="interactable"]
+position = Vector2(-605.7976, -169.21826)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/boombox"]
+position = Vector2(-7, 107)
+shape = SubResource("RectangleShape2D_djouk")
+
+[node name="calender" type="Area2D" parent="interactable"]
+position = Vector2(320, -244)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/calender"]
+position = Vector2(0, 150.5)
+shape = SubResource("RectangleShape2D_7mxui")
+
+[node name="Couch" type="Area2D" parent="interactable"]
+position = Vector2(36, 27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/Couch"]
+position = Vector2(-3, 101)
+shape = SubResource("RectangleShape2D_tnmaq")
+
+[node name="dialogbox" type="Node" parent="."]
+
+[node name="Dialogue Box 2" parent="dialogbox" instance=ExtResource("26_wp2p5")]
+
+[node name="MusicPlayer" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("27_wp2p5")
+autoplay = true
+parameters/looping = true
+
+[connection signal="timeout" from="interactable/Interact3/Timer" to="interactable/Interact3" method="_on_timer_timeout"]
+[connection signal="body_entered" from="interactable/table" to="Player/CharacterBody2D" method="_on_table_body_entered"]
+[connection signal="body_exited" from="interactable/table" to="Player/CharacterBody2D" method="_on_table_body_exited"]
+[connection signal="body_entered" from="interactable/boombox" to="Player/CharacterBody2D" method="_on_boombox_body_entered"]
+[connection signal="body_exited" from="interactable/boombox" to="Player/CharacterBody2D" method="_on_boombox_body_exited"]
+[connection signal="body_entered" from="interactable/calender" to="Player/CharacterBody2D" method="_on_calender_body_entered"]
+[connection signal="body_exited" from="interactable/calender" to="Player/CharacterBody2D" method="_on_calender_body_exited"]
+[connection signal="body_entered" from="interactable/Couch" to="Player/CharacterBody2D" method="_on_couch_body_entered"]
+[connection signal="body_exited" from="interactable/Couch" to="Player/CharacterBody2D" method="_on_couch_body_exited"]

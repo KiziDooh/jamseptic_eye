@@ -14,8 +14,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	#	velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -40,3 +40,31 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+
+func _on_boombox_body_entered(body: Node2D) -> void:
+	help.WhichInteractable = "boombox"
+
+func _on_boombox_body_exited(body: Node2D) -> void:
+	help.WhichInteractable = "none"
+
+func _on_table_body_entered(body: Node2D) -> void:
+	help.WhichInteractable = "table"
+
+func _on_table_body_exited(body: Node2D) -> void:
+	help.WhichInteractable = "none"
+
+func _on_calender_body_entered(body: Node2D) -> void:
+	help.WhichInteractable = "calender"
+
+func _on_calender_body_exited(body: Node2D) -> void:
+	help.WhichInteractable = "none"
+
+
+func _on_couch_body_entered(body: Node2D) -> void:
+	help.WhichInteractable = "Couch"
+
+
+func _on_couch_body_exited(body: Node2D) -> void:
+	help.WhichInteractable = "none"
