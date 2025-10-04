@@ -73,5 +73,12 @@ func _physics_process(delta: float) -> void:
 			elif whichline == 3 and Input.is_action_just_released("interact"):
 				whichline = 1
 
+	if help.WhichInteractable == "curtains1" or help.WhichInteractable == "curtains2":
+			if whichline == 1 and Input.is_action_just_released("interact"):
+				display_line("It's quite a nice day.")
+				whichline = 2
+			elif whichline == 2 and Input.is_action_just_released("interact"):
+				whichline = 1
+
 	if Input.is_action_just_pressed("ui_text_newline"):
 		close()

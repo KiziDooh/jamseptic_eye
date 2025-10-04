@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c17krtc6m37un" path="res://visuals/UI/TextBoxPNG.png" id="2_kbnfh"]
 [ext_resource type="FontFile" uid="uid://dlber2wwvqabu" path="res://visuals/Fonts/boldpixels/ank.ttf" id="3_kbnfh"]
 [ext_resource type="FontFile" uid="uid://dc4demacjh02" path="res://visuals/Fonts/boldpixels/Scabber-q2Mn0.ttf" id="3_v1ie3"]
-[ext_resource type="AudioStream" uid="uid://cbrhbjjx8edtq" path="res://Sounds/Sfx/Death Game (Click).mp3" id="5_t8w4c"]
+[ext_resource type="AudioStream" uid="uid://ddk1ga6yx3xc3" path="res://Sounds/Sfx/death_click.mp3" id="5_t8w4c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1n5wf"]
 texture = ExtResource("2_kbnfh")
@@ -81,5 +81,7 @@ text = ">"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_t8w4c")
+volume_db = -5.0
+pitch_scale = 10.0
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/Panel/Button" to="." method="_on_button_pressed"]

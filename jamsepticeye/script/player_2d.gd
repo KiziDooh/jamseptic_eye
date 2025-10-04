@@ -61,10 +61,20 @@ func _on_calender_body_entered(body: Node2D) -> void:
 func _on_calender_body_exited(body: Node2D) -> void:
 	help.WhichInteractable = "none"
 
-
 func _on_couch_body_entered(body: Node2D) -> void:
 	help.WhichInteractable = "Couch"
 
-
 func _on_couch_body_exited(body: Node2D) -> void:
+	help.WhichInteractable = "none"
+
+func _on_curtains_1_body_entered(body: Node2D) -> void:
+	help.WhichInteractable = "curtains1"
+
+func _on_curtains_1_body_exited(body: Node2D) -> void:
+	help.WhichInteractable = "none"
+
+func _on_curtains_2_body_entered(body: Node2D) -> void:
+	help.WhichInteractable = "curtains2"
+
+func _on_curtains_2_body_exited(body: Node2D) -> void:
 	help.WhichInteractable = "none"

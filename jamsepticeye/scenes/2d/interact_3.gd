@@ -14,7 +14,8 @@ func _process(delta: float) -> void:
 	pointer("boombox",$"../boombox")
 	pointer("calender",$"../calender")
 	pointer("Couch",$"../Couch")
-	
+	pointer("curtains1",$"../curtains1")
+	pointer("curtains2",$"../curtains2")
 	
 	
 	

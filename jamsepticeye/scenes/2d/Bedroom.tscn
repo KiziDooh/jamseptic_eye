@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c4bpge67gygc3"]
+[gd_scene load_steps=37 format=3 uid="uid://c4bpge67gygc3"]
 
 [ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="1_83ula"]
 [ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="2_m7qgy"]
@@ -25,8 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://dbw2c6y5h6xlv" path="res://visuals/2d/room/actual room/right_wall.png" id="21_eymyt"]
 [ext_resource type="Script" uid="uid://dayofw6wnfamd" path="res://scenes/2d/interact_3.gd" id="24_7mxui"]
 [ext_resource type="Texture2D" uid="uid://8dipsuk4my4b" path="res://visuals/UI/Interact3.png" id="24_djouk"]
+[ext_resource type="Texture2D" uid="uid://dsxoav6wsvdvm" path="res://visuals/2d/room/actual room/window.png" id="26_05b6d"]
 [ext_resource type="PackedScene" uid="uid://e0b2u7tpphvv" path="res://scenes/Dialog_Box/dialogue_box2.tscn" id="26_wp2p5"]
 [ext_resource type="AudioStream" uid="uid://b5olfndtvuyv2" path="res://Sounds/Musics/IYUSDFGOUSWER.mp3" id="27_wp2p5"]
+[ext_resource type="Texture2D" uid="uid://6na3so5hgd78" path="res://visuals/2d/room/objects/curtains.png" id="28_85avj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig6mx"]
 size = Vector2(2574, 110)
@@ -41,7 +43,13 @@ size = Vector2(201, 318)
 size = Vector2(172, 321)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnmaq"]
-size = Vector2(113, 196.5)
+size = Vector2(113, 284.25003)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pbbw"]
+size = Vector2(164, 436)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4cdg"]
+size = Vector2(234, 480)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(480.2024, -19.218262)
@@ -127,6 +135,16 @@ position = Vector2(325, -139)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("11_tnmaq")
 
+[node name="Curtains" type="Sprite2D" parent="Objects"]
+position = Vector2(80, -3)
+scale = Vector2(1.6274124, 1.4709895)
+texture = ExtResource("28_85avj")
+
+[node name="Curtains2" type="Sprite2D" parent="Objects"]
+position = Vector2(963.99994, -3)
+scale = Vector2(1.6274124, 1.4709895)
+texture = ExtResource("28_85avj")
+
 [node name="walls" type="Node" parent="."]
 
 [node name="Floor" type="Sprite2D" parent="walls"]
@@ -150,6 +168,18 @@ texture = ExtResource("20_vrigg")
 z_index = -1
 position = Vector2(1106.2024, -229.21826)
 texture = ExtResource("21_eymyt")
+
+[node name="Window" type="Sprite2D" parent="walls"]
+z_index = -1
+position = Vector2(-175, -165.00002)
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("26_05b6d")
+
+[node name="Window2" type="Sprite2D" parent="walls"]
+z_index = -1
+position = Vector2(694.00006, -167)
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("26_05b6d")
 
 [node name="Object_silhouettes" type="Node" parent="."]
 
@@ -253,10 +283,25 @@ shape = SubResource("RectangleShape2D_7mxui")
 
 [node name="Couch" type="Area2D" parent="interactable"]
 position = Vector2(36, 27)
+scale = Vector2(1, 2.3999991)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/Couch"]
-position = Vector2(-3, 101)
+position = Vector2(-3, 85.83337)
 shape = SubResource("RectangleShape2D_tnmaq")
+
+[node name="curtains1" type="Area2D" parent="interactable"]
+position = Vector2(-178, -176)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="interactable/curtains1"]
+position = Vector2(-2, -17)
+shape = SubResource("RectangleShape2D_4pbbw")
+
+[node name="curtains2" type="Area2D" parent="interactable"]
+position = Vector2(704, -175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/curtains2"]
+position = Vector2(8, 40)
+shape = SubResource("RectangleShape2D_u4cdg")
 
 [node name="dialogbox" type="Node" parent="."]
 
@@ -278,3 +323,7 @@ parameters/looping = true
 [connection signal="body_exited" from="interactable/calender" to="Player/CharacterBody2D" method="_on_calender_body_exited"]
 [connection signal="body_entered" from="interactable/Couch" to="Player/CharacterBody2D" method="_on_couch_body_entered"]
 [connection signal="body_exited" from="interactable/Couch" to="Player/CharacterBody2D" method="_on_couch_body_exited"]
+[connection signal="body_entered" from="interactable/curtains1" to="Player/CharacterBody2D" method="_on_curtains_1_body_entered"]
+[connection signal="body_exited" from="interactable/curtains1" to="Player/CharacterBody2D" method="_on_curtains_1_body_exited"]
+[connection signal="body_entered" from="interactable/curtains2" to="Player/CharacterBody2D" method="_on_curtains_2_body_entered"]
+[connection signal="body_exited" from="interactable/curtains2" to="Player/CharacterBody2D" method="_on_curtains_2_body_exited"]
