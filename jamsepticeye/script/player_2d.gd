@@ -79,8 +79,9 @@ func _on_curtains_2_body_entered(body: Node2D) -> void:
 func _on_curtains_2_body_exited(body: Node2D) -> void:
 	help.WhichInteractable = "none"
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_door_body_entered(body: Node2D) -> void:
 	help.WhichInteractable = "door"
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+
+func _on_door_body_exited(body: Node2D) -> void:
 	help.WhichInteractable = "none"

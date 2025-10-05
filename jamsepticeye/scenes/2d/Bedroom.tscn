@@ -151,6 +151,12 @@ position = Vector2(963.99994, -3)
 scale = Vector2(1.6274124, 1.4709895)
 texture = ExtResource("28_85avj")
 
+[node name="Door" type="Sprite2D" parent="Objects"]
+z_index = 1
+position = Vector2(1538, -68)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("33_i0dgb")
+
 [node name="walls" type="Node" parent="."]
 
 [node name="Floor" type="Sprite2D" parent="walls"]
@@ -309,10 +315,10 @@ position = Vector2(704, -175)
 position = Vector2(8, 40)
 shape = SubResource("RectangleShape2D_u4cdg")
 
-[node name="Area2D" type="Area2D" parent="interactable"]
+[node name="Door" type="Area2D" parent="interactable"]
 position = Vector2(1504, -139)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/Door"]
 position = Vector2(11, 42)
 shape = SubResource("RectangleShape2D_1wvc5")
 
@@ -338,12 +344,6 @@ stream = ExtResource("32_i0dgb")
 volume_db = -5.0
 pitch_scale = 10.0
 
-[node name="Door" type="Sprite2D" parent="MusicPlayer"]
-z_index = -1
-position = Vector2(1538, -68)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("33_i0dgb")
-
 [connection signal="timeout" from="interactable/Interact3/Timer" to="interactable/Interact3" method="_on_timer_timeout"]
 [connection signal="body_entered" from="interactable/table" to="Player/CharacterBody2D" method="_on_table_body_entered"]
 [connection signal="body_exited" from="interactable/table" to="Player/CharacterBody2D" method="_on_table_body_exited"]
@@ -357,6 +357,6 @@ texture = ExtResource("33_i0dgb")
 [connection signal="body_exited" from="interactable/curtains1" to="Player/CharacterBody2D" method="_on_curtains_1_body_exited"]
 [connection signal="body_entered" from="interactable/curtains2" to="Player/CharacterBody2D" method="_on_curtains_2_body_entered"]
 [connection signal="body_exited" from="interactable/curtains2" to="Player/CharacterBody2D" method="_on_curtains_2_body_exited"]
-[connection signal="body_entered" from="interactable/Area2D" to="Player/CharacterBody2D" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="interactable/Area2D" to="Player/CharacterBody2D" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="interactable/Door" to="Player/CharacterBody2D" method="_on_door_body_entered"]
+[connection signal="body_exited" from="interactable/Door" to="Player/CharacterBody2D" method="_on_door_body_exited"]
 [connection signal="timeout" from="MusicPlayer/Timer" to="." method="_on_timer_timeout"]

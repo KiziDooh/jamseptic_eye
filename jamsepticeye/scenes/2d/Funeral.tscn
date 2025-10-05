@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://dqjaox8c484ii"]
+
+[ext_resource type="Script" uid="uid://di86tj8gvf3dh" path="res://script/tv.gd" id="1_ncev1"]
+[ext_resource type="AudioStream" uid="uid://ck7yvkv434kx" path="res://Sounds/Musics/Death Game (Funeral).mp3" id="2_a1mhg"]
+[ext_resource type="AudioStream" uid="uid://wl2d2n5fc45t" path="res://Sounds/Sfx/crying-man-2-42495.mp3" id="4_5ddbu"]
+[ext_resource type="PackedScene" uid="uid://e0b2u7tpphvv" path="res://scenes/Dialog_Box/dialogue_box2.tscn" id="4_420if"]
+[ext_resource type="PackedScene" uid="uid://csamlfeu82i2e" path="res://scenes/Dialog_Box/DialogueBox.tscn" id="5_a1mhg"]
+[ext_resource type="Texture2D" uid="uid://dr2x2jc35mw0i" path="res://visuals/2d/funeral/funeral_crowd.png" id="5_sb2g6"]
+[ext_resource type="Texture2D" uid="uid://b408rn1s3p3e3" path="res://visuals/2d/funeral/Poduim.png" id="6_032ip"]
+[ext_resource type="Texture2D" uid="uid://bxdohf848tb2q" path="res://visuals/2d/funeral/grass.png" id="7_5ddbu"]
+[ext_resource type="Texture2D" uid="uid://bd631mwy5oki5" path="res://visuals/2d/funeral/tree_2.webp" id="8_gonel"]
+[ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="9_sgf0i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07u05"]
+size = Vector2(2574, 110)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ncev1")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.7079665, 0.7079665, 0.7079664, 1)
+
+[node name="MusicPlayer" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("2_a1mhg")
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("4_5ddbu")
+volume_db = -10.524
+autoplay = true
+parameters/looping = true
+
+[node name="dialogbox" type="Node" parent="."]
+
+[node name="Dialogue Box 2" parent="dialogbox" instance=ExtResource("4_420if")]
+
+[node name="Dialogue Box" parent="dialogbox" instance=ExtResource("5_a1mhg")]
+offset_left = -49.0
+offset_top = 410.0
+offset_right = -49.0
+offset_bottom = 410.0
+
+[node name="funeral_stuff" type="Node" parent="."]
+
+[node name="FuneralCrowd" type="Sprite2D" parent="funeral_stuff"]
+position = Vector2(-151, -542)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("5_sb2g6")
+
+[node name="FuneralCrowd2" type="Sprite2D" parent="funeral_stuff"]
+position = Vector2(228, -912)
+texture = ExtResource("5_sb2g6")
+
+[node name="Poduim" type="Sprite2D" parent="funeral_stuff"]
+position = Vector2(-292, -275)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_032ip")
+
+[node name="Grass" type="Sprite2D" parent="funeral_stuff"]
+z_index = -10
+position = Vector2(743.00006, -1119.0002)
+rotation = 0.019153785
+scale = Vector2(2.6525464, 2.207562)
+texture = ExtResource("7_5ddbu")
+
+[node name="Tree2" type="Sprite2D" parent="funeral_stuff"]
+z_index = -13
+position = Vector2(287, -1328)
+scale = Vector2(5, 5)
+texture = ExtResource("8_gonel")
+
+[node name="Player" type="Node" parent="."]
+
+[node name="CharacterBody2D" parent="Player" instance=ExtResource("9_sgf0i")]
+z_index = 2
+position = Vector2(1343, -331)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player/CharacterBody2D"]
+scale = Vector2(0.2570694, 0.2570694)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Player"]
+position = Vector2(480.2024, 161.78174)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(-85.20239, -225.78174)
+shape = SubResource("RectangleShape2D_07u05")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(-1297, -6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_07u05")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(1045, 6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_07u05")

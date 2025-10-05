@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://c6u125ci6chsa"]
+[gd_scene load_steps=47 format=3 uid="uid://c6u125ci6chsa"]
 
 [ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="1_l0kmo"]
 [ext_resource type="Script" uid="uid://be766lbah6jp0" path="res://script/suicide_room.gd" id="1_unieu"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://beve81ownsdn4" path="res://visuals/2d/room/room_silhouette/boombox_silhouette.png" id="19_864u2"]
 [ext_resource type="Texture2D" uid="uid://d3vredche8pmk" path="res://visuals/2d/player sprites/Hang_In_There.png" id="20_2t5yg"]
 [ext_resource type="Texture2D" uid="uid://dnpchwtmxcdl2" path="res://visuals/2d/room/room_silhouette/couch_silhouette.png" id="20_j3jly"]
-[ext_resource type="Script" path="res://script/interact_3.gd" id="20_unieu"]
+[ext_resource type="Script" uid="uid://dayofw6wnfamd" path="res://script/interact_3.gd" id="20_unieu"]
 [ext_resource type="Texture2D" uid="uid://b0hvi7x5qfb7x" path="res://visuals/2d/room/room_silhouette/table_silhouette.png" id="21_4yrr0"]
 [ext_resource type="AudioStream" uid="uid://dn7a7cn1th22f" path="res://Sounds/Musics/Death game (1).mp3" id="21_l0kmo"]
 [ext_resource type="AudioStream" uid="uid://c3im6mo16w8mf" path="res://Sounds/Sfx/Wispers_of_Death_2.wav" id="22_4qexh"]
@@ -54,6 +54,9 @@ size = Vector2(92, 436)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4cdg"]
 size = Vector2(234, 480)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unieu"]
+size = Vector2(188, 542)
+
 [sub_resource type="QuadMesh" id="QuadMesh_l0kmo"]
 
 [sub_resource type="Gradient" id="Gradient_2t5yg"]
@@ -66,14 +69,14 @@ gradient = SubResource("Gradient_2t5yg")
 fill_from = Vector2(0.45726496, 0.6111111)
 fill_to = Vector2(0.47435898, 0)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2t5yg"]
+load_path = "res://.godot/imported/Hang_In_There.png-5a6a8524b05da8b36215efbcee8b5d31.ctex"
+
 [sub_resource type="Gradient" id="Gradient_4qexh"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_unieu"]
 gradient = SubResource("Gradient_4qexh")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2t5yg"]
-load_path = "res://.godot/imported/Hang_In_There.png-5a6a8524b05da8b36215efbcee8b5d31.ctex"
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_unieu")
@@ -273,6 +276,13 @@ position = Vector2(704, -175)
 position = Vector2(8, 40)
 shape = SubResource("RectangleShape2D_u4cdg")
 
+[node name="Door" type="Area2D" parent="interactable"]
+position = Vector2(1504, -139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/Door"]
+position = Vector2(11, 42)
+shape = SubResource("RectangleShape2D_unieu")
+
 [node name="dialogbox" type="Node" parent="."]
 
 [node name="Dialogue Box 2" parent="dialogbox" instance=ExtResource("28_m0483")]
@@ -339,13 +349,6 @@ scale = Vector2(4000, 3000)
 mesh = SubResource("QuadMesh_l0kmo")
 texture = SubResource("GradientTexture2D_4qexh")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="Object_silhouettes"]
-z_index = 1
-position = Vector2(593, -221)
-scale = Vector2(-85.61978, -67.08478)
-mesh = SubResource("QuadMesh_l0kmo")
-texture = SubResource("GradientTexture1D_unieu")
-
 [node name="DirectionalLight2D2" type="DirectionalLight2D" parent="Object_silhouettes"]
 position = Vector2(304, -206)
 energy = 0.27
@@ -357,25 +360,35 @@ z_index = -3
 position = Vector2(-260, -147)
 texture = ExtResource("25_dui7e")
 
-[node name="HangInThere" type="Sprite2D" parent="."]
+[node name="Hang_In_There" type="Node" parent="."]
+
+[node name="HangInThere" type="Sprite2D" parent="Hang_In_There"]
 visible = false
 z_index = 1
 position = Vector2(538, -210)
 scale = Vector2(0.46, 0.46)
 texture = ExtResource("20_2t5yg")
 
-[node name="HangInThere2" type="Sprite2D" parent="."]
+[node name="HangInThere2" type="Sprite2D" parent="Hang_In_There"]
 visible = false
 z_index = 5
 position = Vector2(520, 80)
 scale = Vector2(0.49, 0.376)
 texture = ExtResource("20_2t5yg")
 
-[node name="HangInThere3" type="Sprite2D" parent="."]
+[node name="HangInThere3" type="Sprite2D" parent="Hang_In_There"]
 z_index = 1
 position = Vector2(567, -148)
 scale = Vector2(0.39, 0.299)
 texture = SubResource("CompressedTexture2D_2t5yg")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Hang_In_There"]
+z_index = 5
+position = Vector2(593, -221)
+rotation = -3.1415927
+scale = Vector2(85.61978, 67.08478)
+mesh = SubResource("QuadMesh_l0kmo")
+texture = SubResource("GradientTexture1D_unieu")
 
 [connection signal="timeout" from="interactable/Interact3/Timer" to="interactable/Interact3" method="_on_timer_timeout"]
 [connection signal="body_entered" from="interactable/table" to="Player/CharacterBody2D" method="_on_table_body_entered"]
@@ -390,3 +403,5 @@ texture = SubResource("CompressedTexture2D_2t5yg")
 [connection signal="body_exited" from="interactable/curtains1" to="Player/CharacterBody2D" method="_on_curtains_1_body_exited"]
 [connection signal="body_entered" from="interactable/curtains2" to="Player/CharacterBody2D" method="_on_curtains_2_body_entered"]
 [connection signal="body_exited" from="interactable/curtains2" to="Player/CharacterBody2D" method="_on_curtains_2_body_exited"]
+[connection signal="body_entered" from="interactable/Door" to="Player/CharacterBody2D" method="_on_door_body_entered"]
+[connection signal="body_exited" from="interactable/Door" to="Player/CharacterBody2D" method="_on_door_body_exited"]

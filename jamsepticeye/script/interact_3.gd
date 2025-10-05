@@ -17,10 +17,15 @@ func _process(delta: float) -> void:
 	pointer("curtains1",$"../curtains1")
 	pointer("curtains2",$"../curtains2")
 	
-	if help.knock == true:
-		pointer("door",$"../Area2D")
+	if help.room == "bedroom":
+		if help.knock == true:
+			pointer("door",$"../Door")
+			if help.WhichInteractable == "door" and Input.is_action_just_released("interact"):
+				get_tree().change_scene_to_file("res://scenes/2d/watchin_tv_room.tscn") 
+	if help.room == "suicide":
+		pointer("door",$"../Door")
 		if help.WhichInteractable == "door" and Input.is_action_just_released("interact"):
-			get_tree().change_scene_to_file("res://scenes/2d/watchin_tv_room.tscn") 
+			get_tree().change_scene_to_file("res://scenes/dead.tscn") 
 	
 	
 	

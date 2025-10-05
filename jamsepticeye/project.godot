@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jamsepticeye"
-run/main_scene="res://scenes/dead.tscn"
+run/main_scene="uid://c4bpge67gygc3"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://visuals/2d/icon.svg"
 
