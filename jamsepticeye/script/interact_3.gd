@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	if help.room == "suicide":
 		pointer("door",$"../Door")
 		if help.WhichInteractable == "door" and Input.is_action_just_released("interact"):
-			get_tree().change_scene_to_file("res://scenes/dead.tscn") 
+			get_tree().change_scene_to_file("res://scenes/2d/Funeral.tscn") 
 	
 	
 	

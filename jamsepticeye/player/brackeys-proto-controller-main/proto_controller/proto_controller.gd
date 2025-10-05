@@ -176,3 +176,13 @@ func check_input_mappings():
 	if can_freefly and not InputMap.has_action(input_freefly):
 		push_error("Freefly disabled. No InputAction found for input_freefly: " + input_freefly)
 		can_freefly = false
+
+
+
+func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://scenes/3d/3d_2.tscn") 
+	print("wow")
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	$Timer.start()
+	

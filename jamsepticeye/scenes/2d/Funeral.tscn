@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dqjaox8c484ii"]
 
-[ext_resource type="Script" uid="uid://di86tj8gvf3dh" path="res://script/tv.gd" id="1_ncev1"]
+[ext_resource type="Script" uid="uid://cdj8n7y8htqaa" path="res://script/funeral.gd" id="1_sb2g6"]
 [ext_resource type="AudioStream" uid="uid://ck7yvkv434kx" path="res://Sounds/Musics/Death Game (Funeral).mp3" id="2_a1mhg"]
 [ext_resource type="AudioStream" uid="uid://wl2d2n5fc45t" path="res://Sounds/Sfx/crying-man-2-42495.mp3" id="4_5ddbu"]
 [ext_resource type="PackedScene" uid="uid://e0b2u7tpphvv" path="res://scenes/Dialog_Box/dialogue_box2.tscn" id="4_420if"]
@@ -15,7 +15,7 @@
 size = Vector2(2574, 110)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_ncev1")
+script = ExtResource("1_sb2g6")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.7079665, 0.7079665, 0.7079664, 1)

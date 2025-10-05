@@ -32,10 +32,46 @@ func _on_button_pressed():
 func _physics_process(delta: float) -> void:
 	if help.friendspeak == 1 and Input.is_action_just_released("interact"):
 		placeholder = "hello"
-		display_line("I had fun","friend")
+		display_line("Yaaah... it's been foooorever","friend")
 		help.friendspeak = 2
 	elif help.friendspeak == 2 and Input.is_action_just_released("interact"):
+		display_line("We neeed to hang out more")
 		help.friendspeak = 3
+	elif help.friendspeak == 3 and Input.is_action_just_released("interact"):
+		help.friendspeak = 4
 		close()
+	elif help.friendspeak == 5 and Input.is_action_just_released("interact"):
+		display_line("me too")
+		help.friendspeak = 6
+	elif help.friendspeak == 6 and Input.is_action_just_released("interact"):
+		help.friendspeak = 20
+		close()
+	elif help.friendspeak == 7 and Input.is_action_just_released("interact"):
+		display_line("*psshhh* your sooooo.. funny")
+		help.friendspeak = 8
+	elif help.friendspeak == 8 and Input.is_action_just_released("interact"):
+		help.friendspeak = 9
+		close()
+	elif help.friendspeak == 10 and Input.is_action_just_released("interact"):
+		display_line("I mean it")
+		help.friendspeak = 11
+	elif help.friendspeak == 11 and Input.is_action_just_released("interact"):
+		close()
+		help.friendspeak = 12
+		
+	elif help.friendspeak == 14:
+		display_line("ok jeesh... I get it")
+		help.friendspeak = 15
+	elif help.friendspeak == 15 and Input.is_action_just_released("interact"):
+		close()
+		help.friendspeak = 16
+	elif help.friendspeak == 17:
+		display_line("Then you should give me all your ice cream :l")
+		help.friendspeak = 18
+	elif help.friendspeak == 18 and Input.is_action_just_released("interact"):
+		close()
+		help.friendspeak = 19
+	 
+		
 	#if Input.is_action_just_pressed("interact"):
 	#	close() 

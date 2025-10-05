@@ -82,23 +82,71 @@ func _physics_process(delta: float) -> void:
 
 		if Input.is_action_just_pressed("ui_text_newline"):
 			close()
+			
+			
+			
+			
 	if help.room == "tv":
 		if whichline == 1:
-				display_line("It's been a while","player")
+				display_line("Wasn't expecting you... It's been a while","player")
 				whichline = 2
 		elif whichline == 2 and Input.is_action_just_released("interact"):
 			help.friendspeak = 1
 			whichline = 3
-		elif help.friendspeak == 3:
-			display_line("yah...","player")
-			help.friendspeak = 4
-			whichline = 4
-		elif whichline == 4 and Input.is_action_just_released("interact"):
-			get_tree().change_scene_to_file("res://scenes/2d/Suicide_Sam.tscn") 
-	
+		elif help.friendspeak == 4:
+			display_line("i'll think about it..","player")
+			help.friendspeak = 0
+			whichline = 5
+		elif whichline == 5 and Input.is_action_just_released("interact"):
+			display_line("I missed you tho...")
+			whichline = 6
+		elif whichline == 6 and Input.is_action_just_released("interact"):
+			help.friendspeak = 5
+			whichline = 0
+			close()
+		elif help.friendspeak == 20:
+			display_line("Woooooaaahhh... you missed yourself")
+			whichline = 7
+			help.friendspeak = 0
+		elif whichline == 7 and Input.is_action_just_released("interact"):
+			help.friendspeak = 7
+			whichline = 0
+			close()
+		elif help.friendspeak == 9:
+			display_line("as if")
+			whichline = 10
+			help.friendspeak = 0
+		elif whichline == 10 and Input.is_action_just_released("interact"):
+			whichline = 0
+			close()
+			help.friendspeak = 10
+			
+		elif help.friendspeak == 12:
+			display_line("im litterly NOT shut up!!")
+			whichline = 11
+			help.friendspeak = 13
+		elif whichline == 11 and Input.is_action_just_released("interact"):
+			whichline = 0
+			close() 
+			help.friendspeak = 14
+		elif help.friendspeak == 16:
+			whichline = 12
+			help.friendspeak = 0
+			display_line("im sorry...")
+		elif whichline == 12 and Input.is_action_just_released("interact"):
+			whichline = 0
+			close() 
+			help.friendspeak = 17
+		elif help.friendspeak == 19:
+			display_line("pssh over my dead body..")
+			help.friendspeak = 21
 		
-		#elif whichline == 3 and Input.is_action_just_released("interact"):
-		#	whichline = 1
+		elif help.friendspeak == 21 and Input.is_action_just_released("interact"):
+			display_line("","LATER THAT NIGHT")	
+			help.friendspeak = 22
+		elif help.friendspeak == 22 and Input.is_action_just_released("interact"):
+			get_tree().change_scene_to_file("res://scenes/2d/Suicide_Sam.tscn") 
+
 		
 	if help.room == "sam":
 		if whichline == 1:

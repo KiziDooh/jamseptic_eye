@@ -1,5 +1,7 @@
 extends Node2D
 
+const SUICIDE_ROOM = preload("uid://c6u125ci6chsa")
+
 var start = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

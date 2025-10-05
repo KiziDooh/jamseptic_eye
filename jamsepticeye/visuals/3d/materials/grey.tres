@@ -1,0 +1,31 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://c355d7m2i2enq"]
+
+[sub_resource type="Gradient" id="Gradient_iuae6"]
+colors = PackedColorArray(0, 0, 0, 1, 0.3854925, 0.38549247, 0.38549247, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0pyd2"]
+gradient = SubResource("Gradient_iuae6")
+fill_from = Vector2(0, 0.7304348)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iiilw"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.092
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[resource]
+resource_name = "Material"
+next_pass = SubResource("StandardMaterial3D_iiilw")
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.31061712, 0.31061712, 0.3106171, 1)
+albedo_texture = SubResource("GradientTexture2D_0pyd2")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.092

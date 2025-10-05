@@ -1,8 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://y3qdvvdmdirl"]
+[gd_scene load_steps=15 format=3 uid="uid://y3qdvvdmdirl"]
 
+[ext_resource type="Texture2D" uid="uid://dsxoav6wsvdvm" path="res://visuals/2d/room/actual room/window.png" id="1_0qy4d"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://player/brackeys-proto-controller-main/proto_controller/proto_controller.tscn" id="1_1u4jr"]
-[ext_resource type="PackedScene" uid="uid://pj48fxku47jy" path="res://visuals/3d/furniture.tscn" id="2_8xdty"]
-[ext_resource type="PackedScene" uid="uid://bv6220iqf8wa8" path="res://visuals/3d/couch.blend" id="3_0lkby"]
+[ext_resource type="Material" uid="uid://co4ng5rs6wamy" path="res://visuals/3d/materials/dark_pinl.tres" id="1_jygum"]
+[ext_resource type="PackedScene" uid="uid://pj48fxku47jy" path="res://visuals/3d/models/furniture.tscn" id="2_8xdty"]
+[ext_resource type="Texture2D" uid="uid://cscjnkk44r2hu" path="res://visuals/2d/room/objects/calender.png" id="2_gfuto"]
+[ext_resource type="Texture2D" uid="uid://cvvh5d0rh70xd" path="res://placeholders/placeholder_1.png" id="4_e0yd1"]
+[ext_resource type="Material" uid="uid://4xl7r1fi25t2" path="res://visuals/3d/materials/green.tres" id="4_jjshr"]
+[ext_resource type="Script" uid="uid://8xdfomxpjesc" path="res://scenes/3d/sprite_3d.gd" id="5_tyhrg"]
+[ext_resource type="AudioStream" uid="uid://bcssugycg3ih7" path="res://Sounds/Musics/PeanutDaze(1).mp3" id="9_tyhrg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1u4jr"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,29 +22,556 @@ background_mode = 2
 sky = SubResource("Sky_u747e")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0yd1"]
+size = Vector3(28.513916, 14.848633, 18.889648)
+
+[sub_resource type="FogMaterial" id="FogMaterial_jygum"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 415.09277, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pbjda")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09680033, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80838, 414.99597, 0)
+material_override = ExtResource("1_jygum")
 use_collision = true
-size = Vector3(21.493896, 0.6029053, 18.740234)
+size = Vector3(35.110657, 0.6029053, 18.740234)
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -8.743076, 2.195528, -6.7436595)
+texture = ExtResource("1_0qy4d")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CSGBox3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.6862216, 2.195528, -6.7436595)
+texture = ExtResource("1_0qy4d")
+
+[node name="Sprite3D3" type="Sprite3D" parent="CSGBox3D"]
+transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, -5.731235, 2.0925174, -6.7436595)
+texture = ExtResource("2_gfuto")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80838, 414.99597, 0)
+material_override = ExtResource("1_jygum")
+use_collision = true
+size = Vector3(35.110657, 0.6029053, 18.740234)
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox3D10"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -8.743076, 2.195528, -6.7436595)
+texture = ExtResource("1_0qy4d")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CSGBox3D10"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.6862216, 2.195528, -6.7436595)
+texture = ExtResource("1_0qy4d")
+
+[node name="Sprite3D3" type="Sprite3D" parent="CSGBox3D10"]
+transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, -5.731235, 2.0925174, -6.7436595)
+texture = ExtResource("2_gfuto")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80838, 414.99597, 0)
+material_override = ExtResource("1_jygum")
+use_collision = true
+size = Vector3(35.110657, 0.6029053, 18.740234)
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox3D11"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -8.743076, 2.195528, -6.7436595)
+texture = ExtResource("1_0qy4d")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CSGBox3D11"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.6862216, 2.195528, -6.7436595)
+texture = ExtResource("1_0qy4d")
+
+[node name="Sprite3D3" type="Sprite3D" parent="CSGBox3D11"]
+transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, -5.731235, 2.0925174, -6.7436595)
+texture = ExtResource("2_gfuto")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.597382, 423.05078, 0)
+use_collision = true
+size = Vector3(37.921783, 0.6029053, 18.740234)
+material = ExtResource("1_jygum")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.597382, -154.10913, 0)
+use_collision = true
+size = Vector3(52.121338, 0.6029053, 32.35962)
+material = ExtResource("1_jygum")
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.719286, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D3" type="Sprite3D" parent="CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1263924, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D4" type="Sprite3D" parent="CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D5" type="Sprite3D" parent="CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D6" type="Sprite3D" parent="CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.346596, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D7" type="Sprite3D" parent="CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D8" type="Sprite3D" parent="CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D9" type="Sprite3D" parent="CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D10" type="Sprite3D" parent="CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, -10.868351)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.34854, -154.10913, -31.695755)
+use_collision = true
+size = Vector3(52.121338, 0.6029053, 32.35962)
+material = ExtResource("1_jygum")
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.719286, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D3" type="Sprite3D" parent="CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1263924, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D4" type="Sprite3D" parent="CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D5" type="Sprite3D" parent="CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D6" type="Sprite3D" parent="CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.346596, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D7" type="Sprite3D" parent="CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D8" type="Sprite3D" parent="CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D9" type="Sprite3D" parent="CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D10" type="Sprite3D" parent="CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, -10.868351)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.34854, -154.10913, 72.714615)
+use_collision = true
+size = Vector3(52.121338, 0.6029053, 32.35962)
+material = ExtResource("1_jygum")
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.719286, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D3" type="Sprite3D" parent="CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1263924, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D4" type="Sprite3D" parent="CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D5" type="Sprite3D" parent="CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D6" type="Sprite3D" parent="CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.346596, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D7" type="Sprite3D" parent="CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D8" type="Sprite3D" parent="CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D9" type="Sprite3D" parent="CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D10" type="Sprite3D" parent="CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, -10.868351)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.666412, -154.10913, 72.714615)
+use_collision = true
+size = Vector3(52.121338, 0.6029053, 32.35962)
+material = ExtResource("1_jygum")
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.719286, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D3" type="Sprite3D" parent="CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1263924, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D4" type="Sprite3D" parent="CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D5" type="Sprite3D" parent="CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D6" type="Sprite3D" parent="CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.346596, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D7" type="Sprite3D" parent="CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D8" type="Sprite3D" parent="CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D9" type="Sprite3D" parent="CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D10" type="Sprite3D" parent="CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, -10.868351)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.75397, -154.10913, 93.94052)
+use_collision = true
+size = Vector3(52.121338, 0.6029053, 32.35962)
+material = ExtResource("1_jygum")
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.719286, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D3" type="Sprite3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1263924, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D4" type="Sprite3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D5" type="Sprite3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D6" type="Sprite3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.346596, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D7" type="Sprite3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D8" type="Sprite3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D9" type="Sprite3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D10" type="Sprite3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, -10.868351)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.75397, -154.10913, -23.755737)
+use_collision = true
+size = Vector3(52.121338, 0.6029053, 32.35962)
+material = ExtResource("1_jygum")
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.719286, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D3" type="Sprite3D" parent="CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1263924, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D4" type="Sprite3D" parent="CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D5" type="Sprite3D" parent="CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D6" type="Sprite3D" parent="CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.346596, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D7" type="Sprite3D" parent="CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D8" type="Sprite3D" parent="CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D9" type="Sprite3D" parent="CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D10" type="Sprite3D" parent="CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, -10.868351)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.485817, -168.29825, -71.81361)
+use_collision = true
+size = Vector3(52.121338, 0.6029053, 32.35962)
+material = ExtResource("1_jygum")
+
+[node name="Sprite3D" type="Sprite3D" parent="CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D2" type="Sprite3D" parent="CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.719286, 2, 0)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D3" type="Sprite3D" parent="CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1263924, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D4" type="Sprite3D" parent="CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, 9.638443)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D5" type="Sprite3D" parent="CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.985191, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D6" type="Sprite3D" parent="CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.346596, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D7" type="Sprite3D" parent="CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, -10.49082)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D8" type="Sprite3D" parent="CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1216574, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D9" type="Sprite3D" parent="CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, 9.487682)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="Sprite3D10" type="Sprite3D" parent="CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.630661, 2, -10.868351)
+texture = ExtResource("4_e0yd1")
+script = ExtResource("5_tyhrg")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 418.57654, -7.372467)
+material_override = ExtResource("4_jjshr")
+use_collision = true
+size = Vector3(21.493896, 10.6501465, 1.1721191)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.459011, 413.38898, 0.71498823)
+material_override = ExtResource("4_jjshr")
+use_collision = true
+size = Vector3(22.884186, 21.025269, 1.1721191)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.352173, 413.5511, 8.741726)
+use_collision = true
+size = Vector3(42.198242, 20.70105, 1.1721191)
+material = ExtResource("4_jjshr")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.2487445, 418.57654, 1.2985435)
+material_override = ExtResource("4_jjshr")
+use_collision = true
+size = Vector3(21.493896, 10.6501465, 1.1721191)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 31.690506, 413.8775, 1.2985435)
+material_override = ExtResource("4_jjshr")
+use_collision = true
+size = Vector3(21.493896, 20.048218, 1.1721191)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.591892, 404.3501, 3.226503)
+material_override = ExtResource("4_jjshr")
+use_collision = true
+size = Vector3(11.303711, 20.048218, 1.1721191)
+
+[node name="Area3D" type="Area3D" parent="CSGBox3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1525574e-07, -3.2928467, -4)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D9/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6620483, -0.8204651)
+shape = SubResource("BoxShape3D_e0yd1")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.75938, 418.57654, 1.2985435)
+material_override = ExtResource("4_jjshr")
+use_collision = true
+size = Vector3(21.493896, 10.6501465, 0.48535156)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.445199, -1.4094386, 0)
+material_override = ExtResource("4_jjshr")
+operation = 2
+use_collision = true
+size = Vector3(2.8642578, 4.928711, 1.1721191)
 
 [node name="ProtoController2" parent="." instance=ExtResource("1_1u4jr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37115467, 0.20465279, -2.331924)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37115467, 415.29742, -2.331924)
+collision_layer = 3
+collision_mask = 3
 can_jump = false
 can_sprint = true
 sprint_speed = 15.0
 
-[node name="furniture" parent="." instance=ExtResource("2_8xdty")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.4720268, 1.3201084, 3.2997398)
+[node name="Timer" type="Timer" parent="ProtoController2"]
+wait_time = 22.0
 
-[node name="couch" parent="." instance=ExtResource("3_0lkby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.712064, 3.8665266, -7.526519)
+[node name="furniture" parent="." instance=ExtResource("2_8xdty")]
+transform = Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0.98127496, 416.4873, 0.6468723)
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.670412, 405.2352, 3.2353306)
+size = Vector3(17.788818, 16.998047, 10.339844)
+material = SubResource("FogMaterial_jygum")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_tyhrg")
+autoplay = true
+parameters/looping = true
+
+[connection signal="body_entered" from="CSGBox3D9/Area3D" to="ProtoController2" method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="ProtoController2/Timer" to="ProtoController2" method="_on_timer_timeout"]

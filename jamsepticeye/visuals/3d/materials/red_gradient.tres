@@ -6,7 +6,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.56078434, 0.047058824, 0.14117648, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dr2ph"]
 gradient = SubResource("Gradient_yu2vy")
-fill_from = Vector2(0.25274727, 0.47802198)
+fill_from = Vector2(0.44554454, 0.5940594)
 fill_to = Vector2(1, 0.17032968)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8fon"]
@@ -15,7 +15,7 @@ transparency = 1
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 grow = true
-grow_amount = 0.01
+grow_amount = 0.02
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 5
@@ -30,3 +30,4 @@ albedo_texture = SubResource("GradientTexture2D_dr2ph")
 refraction_scale = 1.0
 stencil_mode = 1
 stencil_flags = 2
+stencil_outline_thickness = 0.02

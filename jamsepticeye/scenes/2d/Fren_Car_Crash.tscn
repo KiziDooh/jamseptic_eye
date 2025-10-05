@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5oomgk4bodty"]
+
+[ext_resource type="Script" uid="uid://di86tj8gvf3dh" path="res://script/tv.gd" id="1_c8bii"]
+[ext_resource type="AudioStream" uid="uid://dn7a7cn1th22f" path="res://Sounds/Musics/Death game (1).mp3" id="2_oyq58"]
+[ext_resource type="AudioStream" uid="uid://dkflfdckdu0wc" path="res://Sounds/Musics/Death Game (Heart from Death game song 1).mp3" id="3_c8bii"]
+[ext_resource type="AudioStream" uid="uid://cytygdd5rwjfh" path="res://Sounds/Sfx/Car_Crash.mp3" id="3_x542h"]
+[ext_resource type="PackedScene" uid="uid://e0b2u7tpphvv" path="res://scenes/Dialog_Box/dialogue_box2.tscn" id="4_ce3ic"]
+[ext_resource type="PackedScene" uid="uid://csamlfeu82i2e" path="res://scenes/Dialog_Box/DialogueBox.tscn" id="5_xnaqr"]
+[ext_resource type="Texture2D" uid="uid://bxdohf848tb2q" path="res://visuals/2d/funeral/grass.png" id="8_xjj4x"]
+[ext_resource type="Texture2D" uid="uid://cvvh5d0rh70xd" path="res://placeholders/placeholder_1.png" id="9_yy2ue"]
+[ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="10_2grt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07u05"]
+size = Vector2(3403, 110)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_c8bii")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.7079665, 0.7079665, 0.7079664, 1)
+
+[node name="MusicPlayer" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("2_oyq58")
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("3_c8bii")
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("3_x542h")
+volume_db = -10.524
+autoplay = true
+parameters/looping = false
+
+[node name="dialogbox" type="Node" parent="."]
+
+[node name="Dialogue Box 2" parent="dialogbox" instance=ExtResource("4_ce3ic")]
+
+[node name="Dialogue Box" parent="dialogbox" instance=ExtResource("5_xnaqr")]
+offset_left = -49.0
+offset_top = 410.0
+offset_right = -49.0
+offset_bottom = 410.0
+
+[node name="funeral_stuff" type="Node" parent="."]
+
+[node name="Grass" type="Sprite2D" parent="funeral_stuff"]
+z_index = -10
+position = Vector2(743.00006, -1119.0002)
+rotation = 0.019153785
+scale = Vector2(2.6525464, 2.207562)
+texture = ExtResource("8_xjj4x")
+
+[node name="Player" type="Node" parent="."]
+
+[node name="CharacterBody2D" parent="Player" instance=ExtResource("10_2grt5")]
+z_index = 2
+position = Vector2(-684, -336)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player/CharacterBody2D"]
+scale = Vector2(0.2570694, 0.2570694)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Player"]
+position = Vector2(480.2024, 161.78174)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(329.2976, -225.78174)
+shape = SubResource("RectangleShape2D_07u05")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(-1297, -6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_07u05")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(1883.7976, 6.2182617)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_07u05")
+
+[node name="Placeholder1" type="Sprite2D" parent="Player/StaticBody2D"]
+position = Vector2(1214.7976, -489.78174)
+texture = ExtResource("9_yy2ue")
