@@ -171,7 +171,7 @@ func _physics_process(delta: float) -> void:
 					display_line("Me and friend always used to listen to all the new fbn releases in this")
 					whichline = 2
 				elif whichline == 2 and Input.is_action_just_released("interact"):
-					display_line("I miss that...")
+					display_line("","I bet he hated it...")
 					whichline = 3
 				elif whichline == 3 and Input.is_action_just_released("interact"):
 					whichline = 1
@@ -181,37 +181,43 @@ func _physics_process(delta: float) -> void:
 					display_line("It's finally the day.. heh.. finally..")
 					whichline = 2
 				elif whichline == 2 and Input.is_action_just_released("interact"):
-					display_line("It'll be over...")
+					display_line("","It's Over.")
 					whichline = 3
 				elif whichline == 3 and Input.is_action_just_released("interact"):
 					whichline = 1
 					
 		if help.WhichInteractable == "table":
 				if whichline == 1 and Input.is_action_just_released("interact"):
-					display_line("Me and Friend used to always eat here...")
+					display_line("Me and my Friend used to always eat here...")
 					whichline = 2
 				elif whichline == 2 and Input.is_action_just_released("interact"):
-					display_line("I probably annoyed him.")
+					display_line("","I know I annoyed him.")
 					whichline = 3
 				elif whichline == 3 and Input.is_action_just_released("interact"):
 					whichline = 1
 					
 		if help.WhichInteractable == "Couch":
 				if whichline == 1 and Input.is_action_just_released("interact"):
-					display_line("Ahhhh my good friend the couch")
+					display_line("my only friend the couch")
 					whichline = 2
 				elif whichline == 2 and Input.is_action_just_released("interact"):
-					display_line("We've been practically glued together for the last month")
+					display_line("I practically didn't leave it for a month")
 					whichline = 3
 				elif whichline == 3 and Input.is_action_just_released("interact"):
 					whichline = 1
 
-		if help.WhichInteractable == "curtains1" or help.WhichInteractable == "curtains2":
+		if help.WhichInteractable == "curtains1":
 				if whichline == 1 and Input.is_action_just_released("interact"):
-					display_line("It's quite a nice day.")
+					display_line("...")
 					whichline = 2
 				elif whichline == 2 and Input.is_action_just_released("interact"):
 					whichline = 1
+		if help.WhichInteractable == "curtains2":
+			if whichline == 1 and Input.is_action_just_released("interact"):
+				display_line("A normal chair")
+				whichline = 2
+			elif whichline == 2 and Input.is_action_just_released("interact"):
+				whichline = 1
 
 		if Input.is_action_just_pressed("ui_text_newline"):
 			close()
