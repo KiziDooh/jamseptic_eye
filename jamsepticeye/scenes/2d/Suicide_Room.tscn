@@ -1,0 +1,392 @@
+[gd_scene load_steps=46 format=3 uid="uid://c6u125ci6chsa"]
+
+[ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="1_l0kmo"]
+[ext_resource type="Script" uid="uid://be766lbah6jp0" path="res://script/suicide_room.gd" id="1_unieu"]
+[ext_resource type="Texture2D" uid="uid://c8b36a5mpoc31" path="res://visuals/2d/room/objects/BoomBox_table.png" id="2_2t5yg"]
+[ext_resource type="Texture2D" uid="uid://bxulv1x4ei1je" path="res://visuals/2d/room/objects/bed.png" id="3_4qexh"]
+[ext_resource type="Texture2D" uid="uid://d32g2y1ssy78m" path="res://visuals/2d/room/objects/better_couch.png" id="4_unieu"]
+[ext_resource type="Texture2D" uid="uid://clqclpjsaoxpx" path="res://visuals/2d/room/objects/blue_chair(1).png" id="5_lylem"]
+[ext_resource type="Texture2D" uid="uid://cnndiy847gmry" path="res://visuals/2d/room/objects/table.png" id="6_r86qj"]
+[ext_resource type="Texture2D" uid="uid://clcwdoqcxi5mu" path="res://visuals/2d/room/objects/the_chair.png" id="7_dj7o8"]
+[ext_resource type="Texture2D" uid="uid://oi1omvfgmcor" path="res://visuals/2d/room/room_silhouette/tv_off.png" id="8_ayfir"]
+[ext_resource type="Texture2D" uid="uid://yjhi1vfnjf4g" path="res://visuals/2d/room/room_silhouette/tv_glow_2.png" id="9_lh7ag"]
+[ext_resource type="Texture2D" uid="uid://6jbl0qy7ymq3" path="res://visuals/2d/room/room_silhouette/tv_glow_1.png" id="10_8b81w"]
+[ext_resource type="Texture2D" uid="uid://cscjnkk44r2hu" path="res://visuals/2d/room/objects/calender.png" id="11_ch6rv"]
+[ext_resource type="Texture2D" uid="uid://6na3so5hgd78" path="res://visuals/2d/room/objects/curtains.png" id="12_54c07"]
+[ext_resource type="Texture2D" uid="uid://11wvqlee7yp" path="res://visuals/2d/room/actual room/floor.png" id="13_o7q3a"]
+[ext_resource type="Texture2D" uid="uid://yci00hy3cg0j" path="res://visuals/2d/room/actual room/back_wall.png" id="14_brkkt"]
+[ext_resource type="Texture2D" uid="uid://deruondmm2tyi" path="res://visuals/2d/room/actual room/left_wall.png" id="15_3nl3a"]
+[ext_resource type="Texture2D" uid="uid://dbw2c6y5h6xlv" path="res://visuals/2d/room/actual room/right_wall.png" id="16_q8vc8"]
+[ext_resource type="Texture2D" uid="uid://dsxoav6wsvdvm" path="res://visuals/2d/room/actual room/window.png" id="17_hawbc"]
+[ext_resource type="Texture2D" uid="uid://dojoawwkw6ccb" path="res://visuals/2d/room/room_silhouette/bed_silhouette.png" id="18_i5p4b"]
+[ext_resource type="Texture2D" uid="uid://beve81ownsdn4" path="res://visuals/2d/room/room_silhouette/boombox_silhouette.png" id="19_864u2"]
+[ext_resource type="Texture2D" uid="uid://d3vredche8pmk" path="res://visuals/2d/player sprites/Hang_In_There.png" id="20_2t5yg"]
+[ext_resource type="Texture2D" uid="uid://dnpchwtmxcdl2" path="res://visuals/2d/room/room_silhouette/couch_silhouette.png" id="20_j3jly"]
+[ext_resource type="Script" path="res://script/interact_3.gd" id="20_unieu"]
+[ext_resource type="Texture2D" uid="uid://b0hvi7x5qfb7x" path="res://visuals/2d/room/room_silhouette/table_silhouette.png" id="21_4yrr0"]
+[ext_resource type="AudioStream" uid="uid://dn7a7cn1th22f" path="res://Sounds/Musics/Death game (1).mp3" id="21_l0kmo"]
+[ext_resource type="AudioStream" uid="uid://c3im6mo16w8mf" path="res://Sounds/Sfx/Wispers_of_Death_2.wav" id="22_4qexh"]
+[ext_resource type="Texture2D" uid="uid://xkreqq3dswu3" path="res://visuals/2d/room/room_silhouette/THE_CHAIR_silhouette.png" id="22_aqd21"]
+[ext_resource type="Texture2D" uid="uid://bqek8nkx6rmfo" path="res://visuals/2d/room/room_silhouette/blue_chair_silhouette.png" id="23_dtjsb"]
+[ext_resource type="Texture2D" uid="uid://8tk0t82jjakn" path="res://visuals/2d/room/room_silhouette/tv_silhouette.png" id="24_ssotx"]
+[ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="25_dui7e"]
+[ext_resource type="Texture2D" uid="uid://8dipsuk4my4b" path="res://visuals/UI/Interact3.png" id="26_cnj0d"]
+[ext_resource type="PackedScene" uid="uid://e0b2u7tpphvv" path="res://scenes/Dialog_Box/dialogue_box2.tscn" id="28_m0483"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig6mx"]
+size = Vector2(2574, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrigg"]
+size = Vector2(283.2207, 245)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djouk"]
+size = Vector2(201, 318)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mxui"]
+size = Vector2(172, 321)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnmaq"]
+size = Vector2(64, 284.25003)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pbbw"]
+size = Vector2(92, 436)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4cdg"]
+size = Vector2(234, 480)
+
+[sub_resource type="QuadMesh" id="QuadMesh_l0kmo"]
+
+[sub_resource type="Gradient" id="Gradient_2t5yg"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.7785714, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4qexh"]
+gradient = SubResource("Gradient_2t5yg")
+fill_from = Vector2(0.45726496, 0.6111111)
+fill_to = Vector2(0.47435898, 0)
+
+[sub_resource type="Gradient" id="Gradient_4qexh"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_unieu"]
+gradient = SubResource("Gradient_4qexh")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2t5yg"]
+load_path = "res://.godot/imported/Hang_In_There.png-5a6a8524b05da8b36215efbcee8b5d31.ctex"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_unieu")
+
+[node name="Player" type="Node" parent="."]
+
+[node name="CharacterBody2D" parent="Player" instance=ExtResource("1_l0kmo")]
+z_index = 3
+position = Vector2(504, -109)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player/CharacterBody2D"]
+scale = Vector2(0.2570694, 0.2570694)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Player"]
+position = Vector2(480.2024, 161.78174)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(-81, -16)
+shape = SubResource("RectangleShape2D_ig6mx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(-1297, -6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_ig6mx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player/StaticBody2D"]
+position = Vector2(1045, 6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_ig6mx")
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="BoomBoxTable" type="Sprite2D" parent="Objects"]
+visible = false
+z_index = 1
+position = Vector2(-589.7976, -42.21826)
+texture = ExtResource("2_2t5yg")
+
+[node name="Bed" type="Sprite2D" parent="Objects"]
+visible = false
+position = Vector2(-478.7976, -33.21826)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_4qexh")
+
+[node name="BetterCouch" type="Sprite2D" parent="Objects"]
+visible = false
+z_index = 3
+position = Vector2(41.202484, 61.781723)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("4_unieu")
+
+[node name="BlueChair(1)" type="Sprite2D" parent="Objects"]
+visible = false
+position = Vector2(1026.2024, -27.218262)
+texture = ExtResource("5_lylem")
+
+[node name="Table" type="Sprite2D" parent="Objects"]
+visible = false
+position = Vector2(1131.2024, -47.21826)
+texture = ExtResource("6_r86qj")
+
+[node name="TheChair" type="Sprite2D" parent="Objects"]
+visible = false
+position = Vector2(1282.2024, -47.21826)
+texture = ExtResource("7_dj7o8")
+
+[node name="TvOff" type="Sprite2D" parent="Objects"]
+visible = false
+z_index = 4
+position = Vector2(7.0023804, 184.48174)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("8_ayfir")
+
+[node name="TvGlow2" type="Sprite2D" parent="Objects"]
+visible = false
+z_index = 4
+position = Vector2(7.0023804, 184.48174)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("9_lh7ag")
+
+[node name="TvGlow1" type="Sprite2D" parent="Objects"]
+visible = false
+z_index = 3
+position = Vector2(7.0023804, 184.48174)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("10_8b81w")
+
+[node name="Calender" type="Sprite2D" parent="Objects"]
+position = Vector2(325, -139)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_ch6rv")
+
+[node name="Curtains" type="Sprite2D" parent="Objects"]
+position = Vector2(80, -3)
+scale = Vector2(1.6274124, 1.4709895)
+texture = ExtResource("12_54c07")
+
+[node name="Curtains2" type="Sprite2D" parent="Objects"]
+position = Vector2(963.99994, -3)
+scale = Vector2(1.6274124, 1.4709895)
+texture = ExtResource("12_54c07")
+
+[node name="walls" type="Node" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="walls"]
+z_index = -1
+position = Vector2(525.2024, -315.21826)
+scale = Vector2(1.9159565, 0.8812665)
+texture = ExtResource("13_o7q3a")
+
+[node name="BackWall" type="Sprite2D" parent="walls"]
+z_index = -1
+position = Vector2(701.2024, -878.21826)
+scale = Vector2(2.6872244, 2.3021998)
+texture = ExtResource("14_brkkt")
+
+[node name="LeftWall" type="Sprite2D" parent="walls"]
+position = Vector2(-335.7976, -160.21826)
+rotation = -0.00067776657
+texture = ExtResource("15_3nl3a")
+
+[node name="RightWall" type="Sprite2D" parent="walls"]
+z_index = -1
+position = Vector2(1106.2024, -229.21826)
+texture = ExtResource("16_q8vc8")
+
+[node name="Window" type="Sprite2D" parent="walls"]
+z_index = -1
+position = Vector2(-175, -165.00002)
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("17_hawbc")
+
+[node name="Window2" type="Sprite2D" parent="walls"]
+z_index = -1
+position = Vector2(694.00006, -167)
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("17_hawbc")
+
+[node name="interactable" type="Node" parent="."]
+
+[node name="Interact3" type="Sprite2D" parent="interactable"]
+visible = false
+z_index = 11
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("26_cnj0d")
+script = ExtResource("20_unieu")
+
+[node name="Timer" type="Timer" parent="interactable/Interact3"]
+wait_time = 0.5
+one_shot = true
+
+[node name="table" type="Area2D" parent="interactable"]
+position = Vector2(1130.2024, -232.21826)
+rotation = -3.1415927
+scale = Vector2(1.2675622, -2.3668902)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/table"]
+z_index = 10
+position = Vector2(-19.168762, 99)
+shape = SubResource("RectangleShape2D_vrigg")
+
+[node name="boombox" type="Area2D" parent="interactable"]
+position = Vector2(-605.7976, -169.21826)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/boombox"]
+z_index = 10
+position = Vector2(-7, 107)
+shape = SubResource("RectangleShape2D_djouk")
+
+[node name="calender" type="Area2D" parent="interactable"]
+position = Vector2(320, -244)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/calender"]
+position = Vector2(0, 150.5)
+shape = SubResource("RectangleShape2D_7mxui")
+
+[node name="Couch" type="Area2D" parent="interactable"]
+position = Vector2(-67, 27)
+scale = Vector2(1, 2.3999991)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/Couch"]
+position = Vector2(-3, 50.416683)
+shape = SubResource("RectangleShape2D_tnmaq")
+
+[node name="curtains1" type="Area2D" parent="interactable"]
+position = Vector2(-223, -180)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="interactable/curtains1"]
+position = Vector2(-8, 87)
+shape = SubResource("RectangleShape2D_4pbbw")
+
+[node name="curtains2" type="Area2D" parent="interactable"]
+position = Vector2(704, -175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/curtains2"]
+position = Vector2(8, 40)
+shape = SubResource("RectangleShape2D_u4cdg")
+
+[node name="dialogbox" type="Node" parent="."]
+
+[node name="Dialogue Box 2" parent="dialogbox" instance=ExtResource("28_m0483")]
+
+[node name="MusicPlayer" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("21_l0kmo")
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("22_4qexh")
+volume_db = -5.541
+pitch_scale = 0.59
+autoplay = true
+
+[node name="Object_silhouettes" type="Node" parent="."]
+
+[node name="BedSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+z_index = 1
+position = Vector2(-476.00003, -29.999998)
+scale = Vector2(1.215, 1.215)
+texture = ExtResource("18_i5p4b")
+
+[node name="BoomboxSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+z_index = 1
+position = Vector2(-611, -51)
+texture = ExtResource("19_864u2")
+
+[node name="CouchSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+z_index = 3
+position = Vector2(-67, 102)
+scale = Vector2(1.37, 1.37)
+texture = ExtResource("20_j3jly")
+
+[node name="TableSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+z_index = 1
+position = Vector2(1136, -46)
+texture = ExtResource("21_4yrr0")
+
+[node name="TheChairSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+z_index = 2
+position = Vector2(695, -4)
+texture = ExtResource("22_aqd21")
+
+[node name="BlueChairSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+z_index = 1
+position = Vector2(1030, -24)
+texture = ExtResource("23_dtjsb")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Object_silhouettes"]
+color = Color(0, 0, 0, 1)
+
+[node name="TvSilhouette" type="Sprite2D" parent="Object_silhouettes"]
+z_index = 4
+position = Vector2(148.99994, 135.00002)
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("24_ssotx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Object_silhouettes"]
+position = Vector2(291, 232)
+scale = Vector2(4000, 3000)
+mesh = SubResource("QuadMesh_l0kmo")
+texture = SubResource("GradientTexture2D_4qexh")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Object_silhouettes"]
+z_index = 1
+position = Vector2(593, -221)
+scale = Vector2(-85.61978, -67.08478)
+mesh = SubResource("QuadMesh_l0kmo")
+texture = SubResource("GradientTexture1D_unieu")
+
+[node name="DirectionalLight2D2" type="DirectionalLight2D" parent="Object_silhouettes"]
+position = Vector2(304, -206)
+energy = 0.27
+range_z_min = 30
+range_z_max = 30
+
+[node name="PixilLayer0" type="Sprite2D" parent="Object_silhouettes"]
+z_index = -3
+position = Vector2(-260, -147)
+texture = ExtResource("25_dui7e")
+
+[node name="HangInThere" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(538, -210)
+scale = Vector2(0.46, 0.46)
+texture = ExtResource("20_2t5yg")
+
+[node name="HangInThere2" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(520, 80)
+scale = Vector2(0.49, 0.376)
+texture = ExtResource("20_2t5yg")
+
+[node name="HangInThere3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(567, -148)
+scale = Vector2(0.39, 0.299)
+texture = SubResource("CompressedTexture2D_2t5yg")
+
+[connection signal="timeout" from="interactable/Interact3/Timer" to="interactable/Interact3" method="_on_timer_timeout"]
+[connection signal="body_entered" from="interactable/table" to="Player/CharacterBody2D" method="_on_table_body_entered"]
+[connection signal="body_exited" from="interactable/table" to="Player/CharacterBody2D" method="_on_table_body_exited"]
+[connection signal="body_entered" from="interactable/boombox" to="Player/CharacterBody2D" method="_on_boombox_body_entered"]
+[connection signal="body_exited" from="interactable/boombox" to="Player/CharacterBody2D" method="_on_boombox_body_exited"]
+[connection signal="body_entered" from="interactable/calender" to="Player/CharacterBody2D" method="_on_calender_body_entered"]
+[connection signal="body_exited" from="interactable/calender" to="Player/CharacterBody2D" method="_on_calender_body_exited"]
+[connection signal="body_entered" from="interactable/Couch" to="Player/CharacterBody2D" method="_on_couch_body_entered"]
+[connection signal="body_exited" from="interactable/Couch" to="Player/CharacterBody2D" method="_on_couch_body_exited"]
+[connection signal="body_entered" from="interactable/curtains1" to="Player/CharacterBody2D" method="_on_curtains_1_body_entered"]
+[connection signal="body_exited" from="interactable/curtains1" to="Player/CharacterBody2D" method="_on_curtains_1_body_exited"]
+[connection signal="body_entered" from="interactable/curtains2" to="Player/CharacterBody2D" method="_on_curtains_2_body_entered"]
+[connection signal="body_exited" from="interactable/curtains2" to="Player/CharacterBody2D" method="_on_curtains_2_body_exited"]

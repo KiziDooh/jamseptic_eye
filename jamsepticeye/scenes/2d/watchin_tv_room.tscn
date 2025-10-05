@@ -1,50 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmcseqftxe3nv"]
+[gd_scene load_steps=6 format=3 uid="uid://cmcseqftxe3nv"]
 
-[ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="1_5oysd"]
+[ext_resource type="Script" uid="uid://di86tj8gvf3dh" path="res://script/tv.gd" id="1_rlou0"]
 [ext_resource type="Texture2D" uid="uid://n3442jx8gxbc" path="res://visuals/2d/room/objects/place background9.png" id="2_yh5vm"]
-[ext_resource type="Texture2D" uid="uid://diji6gu4wtq6q" path="res://visuals/2d/room/objects/couch.png" id="3_0qlhw"]
-[ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="4_ibe8f"]
-[ext_resource type="Texture2D" uid="uid://c8b36a5mpoc31" path="res://visuals/2d/room/objects/BoomBox_table.png" id="5_1h5n0"]
-[ext_resource type="Texture2D" uid="uid://bxulv1x4ei1je" path="res://visuals/2d/room/objects/bed.png" id="6_umit8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig6mx"]
-size = Vector2(2574, 114)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ig6mx"]
+[ext_resource type="PackedScene" uid="uid://e0b2u7tpphvv" path="res://scenes/Dialog_Box/dialogue_box2.tscn" id="3_2gdam"]
+[ext_resource type="AudioStream" uid="uid://c5wqb3xvb2c2j" path="res://Sounds/Musics/PeanutJazz.mp3" id="3_rlou0"]
+[ext_resource type="PackedScene" uid="uid://csamlfeu82i2e" path="res://scenes/Dialog_Box/DialogueBox.tscn" id="4_8x6bo"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_5oysd")]
-z_index = 2
-scale = Vector2(3.89, 3.89)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-scale = Vector2(0.2570694, 0.2570694)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 181)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_ig6mx")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1240, 0)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_ig6mx")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(916, 0)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_ig6mx")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-119.99999, 217.99998)
-scale = Vector2(2.64, 2.64)
-color = Color(1, 1, 0, 1)
-texture = SubResource("CompressedTexture2D_ig6mx")
+script = ExtResource("1_rlou0")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.00184107, 0.0018410675, 0.0018410693, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
@@ -55,28 +20,26 @@ energy = 0.29
 [node name="PlaceBackground9" type="Sprite2D" parent="."]
 modulate = Color(0.99116415, 0.99116427, 0.99116415, 1)
 z_index = -1
-position = Vector2(19, -67.999985)
+position = Vector2(2.000002, 11.999992)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_yh5vm")
 
-[node name="Couch" type="Sprite2D" parent="."]
-visible = false
-z_index = 3
-position = Vector2(-287, 141)
-scale = Vector2(0.47777778, 0.48023063)
-texture = ExtResource("3_0qlhw")
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.104024604, 0.6830533)
 
-[node name="PixilLayer0" type="Sprite2D" parent="."]
-z_index = -3
-position = Vector2(-256, -187)
-texture = ExtResource("4_ibe8f")
+[node name="MusicPlayer" type="Node" parent="."]
 
-[node name="BoomBoxTable" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(-1074, -33)
-texture = ExtResource("5_1h5n0")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("3_rlou0")
+autoplay = true
+parameters/looping = true
 
-[node name="Bed" type="Sprite2D" parent="."]
-position = Vector2(-959, -14)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("6_umit8")
+[node name="dialogbox" type="Node" parent="."]
+
+[node name="Dialogue Box 2" parent="dialogbox" instance=ExtResource("3_2gdam")]
+
+[node name="Dialogue Box" parent="dialogbox" instance=ExtResource("4_8x6bo")]
+offset_left = -49.0
+offset_top = 410.0
+offset_right = -49.0
+offset_bottom = 410.0

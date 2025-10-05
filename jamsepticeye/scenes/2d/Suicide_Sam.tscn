@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnobde657whmr"]
+
+[ext_resource type="PackedScene" uid="uid://e0b2u7tpphvv" path="res://scenes/Dialog_Box/dialogue_box2.tscn" id="1_3xygs"]
+[ext_resource type="Script" uid="uid://cuuecty1dbmkd" path="res://suicide_sam.gd" id="1_db13x"]
+[ext_resource type="AudioStream" uid="uid://jlv380h1ue7o" path="res://Sounds/Sfx/SuicideSam.mp3" id="2_kstc7"]
+[ext_resource type="AudioStream" uid="uid://cvpyq0xru4q7" path="res://Sounds/Sfx/ambient.mp3" id="4_db13x"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_db13x"]
+
+[sub_resource type="Gradient" id="Gradient_4qexh"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6nvfo"]
+gradient = SubResource("Gradient_4qexh")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_db13x")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+z_index = 1
+position = Vector2(570.00006, 325.99997)
+scale = Vector2(-2759.8943, -1831.5552)
+mesh = SubResource("QuadMesh_db13x")
+texture = SubResource("GradientTexture1D_6nvfo")
+
+[node name="Camera2D" type="Camera2D" parent="MeshInstance2D2"]
+
+[node name="Dialogue Box 2" parent="." instance=ExtResource("1_3xygs")]
+offset_left = 466.0
+offset_top = 388.0
+offset_right = 466.0
+offset_bottom = 388.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kstc7")
+volume_db = 1.0
+pitch_scale = 0.63
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_db13x")
+volume_db = 6.599
+pitch_scale = 0.63
+autoplay = true
+parameters/looping = true

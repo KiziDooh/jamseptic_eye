@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://c4bpge67gygc3"]
+[gd_scene load_steps=42 format=3 uid="uid://c4bpge67gygc3"]
 
 [ext_resource type="PackedScene" uid="uid://caumklby5mno2" path="res://player/player_2d.tscn" id="1_83ula"]
+[ext_resource type="Script" uid="uid://d3tlcv5l6nh3e" path="res://script/bedroom.gd" id="1_u4cdg"]
 [ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="2_m7qgy"]
 [ext_resource type="Texture2D" uid="uid://c8b36a5mpoc31" path="res://visuals/2d/room/objects/BoomBox_table.png" id="3_5jspa"]
 [ext_resource type="Texture2D" uid="uid://bxulv1x4ei1je" path="res://visuals/2d/room/objects/bed.png" id="4_3s6hq"]
@@ -23,12 +24,15 @@
 [ext_resource type="Texture2D" uid="uid://yci00hy3cg0j" path="res://visuals/2d/room/actual room/back_wall.png" id="20_eymyt"]
 [ext_resource type="Texture2D" uid="uid://deruondmm2tyi" path="res://visuals/2d/room/actual room/left_wall.png" id="20_vrigg"]
 [ext_resource type="Texture2D" uid="uid://dbw2c6y5h6xlv" path="res://visuals/2d/room/actual room/right_wall.png" id="21_eymyt"]
-[ext_resource type="Script" uid="uid://dayofw6wnfamd" path="res://scenes/2d/interact_3.gd" id="24_7mxui"]
 [ext_resource type="Texture2D" uid="uid://8dipsuk4my4b" path="res://visuals/UI/Interact3.png" id="24_djouk"]
 [ext_resource type="Texture2D" uid="uid://dsxoav6wsvdvm" path="res://visuals/2d/room/actual room/window.png" id="26_05b6d"]
 [ext_resource type="PackedScene" uid="uid://e0b2u7tpphvv" path="res://scenes/Dialog_Box/dialogue_box2.tscn" id="26_wp2p5"]
 [ext_resource type="AudioStream" uid="uid://b5olfndtvuyv2" path="res://Sounds/Musics/IYUSDFGOUSWER.mp3" id="27_wp2p5"]
 [ext_resource type="Texture2D" uid="uid://6na3so5hgd78" path="res://visuals/2d/room/objects/curtains.png" id="28_85avj"]
+[ext_resource type="Script" uid="uid://dayofw6wnfamd" path="res://script/interact_3.gd" id="28_u4cdg"]
+[ext_resource type="AudioStream" uid="uid://dy8q5ehynjji0" path="res://Sounds/Sfx/knock.ogg" id="31_a0vb0"]
+[ext_resource type="AudioStream" uid="uid://ddk1ga6yx3xc3" path="res://Sounds/Sfx/death_click.mp3" id="32_i0dgb"]
+[ext_resource type="Texture2D" uid="uid://qus1hl6iwg3t" path="res://visuals/2d/room/actual room/Door.png" id="33_i0dgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig6mx"]
 size = Vector2(2574, 110)
@@ -51,18 +55,20 @@ size = Vector2(164, 436)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4cdg"]
 size = Vector2(234, 480)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wvc5"]
+size = Vector2(188, 542)
+
 [node name="Node2D" type="Node2D"]
-position = Vector2(480.2024, -19.218262)
+script = ExtResource("1_u4cdg")
 
 [node name="Player" type="Node" parent="."]
 
 [node name="CharacterBody2D" parent="Player" instance=ExtResource("1_83ula")]
 z_index = 2
-position = Vector2(-337, -32)
-scale = Vector2(0.3, 0.3)
+position = Vector2(-380, -100)
+scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player/CharacterBody2D"]
-position = Vector2(0, -40)
 scale = Vector2(0.2570694, 0.2570694)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Player"]
@@ -252,7 +258,7 @@ visible = false
 z_index = 11
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("24_djouk")
-script = ExtResource("24_7mxui")
+script = ExtResource("28_u4cdg")
 
 [node name="Timer" type="Timer" parent="interactable/Interact3"]
 wait_time = 0.5
@@ -286,7 +292,7 @@ position = Vector2(36, 27)
 scale = Vector2(1, 2.3999991)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/Couch"]
-position = Vector2(-3, 85.83337)
+position = Vector2(-3, 50.416687)
 shape = SubResource("RectangleShape2D_tnmaq")
 
 [node name="curtains1" type="Area2D" parent="interactable"]
@@ -303,6 +309,13 @@ position = Vector2(704, -175)
 position = Vector2(8, 40)
 shape = SubResource("RectangleShape2D_u4cdg")
 
+[node name="Area2D" type="Area2D" parent="interactable"]
+position = Vector2(1504, -139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable/Area2D"]
+position = Vector2(11, 42)
+shape = SubResource("RectangleShape2D_1wvc5")
+
 [node name="dialogbox" type="Node" parent="."]
 
 [node name="Dialogue Box 2" parent="dialogbox" instance=ExtResource("26_wp2p5")]
@@ -313,6 +326,23 @@ shape = SubResource("RectangleShape2D_u4cdg")
 stream = ExtResource("27_wp2p5")
 autoplay = true
 parameters/looping = true
+
+[node name="Timer" type="Timer" parent="MusicPlayer"]
+wait_time = 20.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("31_a0vb0")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("32_i0dgb")
+volume_db = -5.0
+pitch_scale = 10.0
+
+[node name="Door" type="Sprite2D" parent="MusicPlayer"]
+z_index = -1
+position = Vector2(1538, -68)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("33_i0dgb")
 
 [connection signal="timeout" from="interactable/Interact3/Timer" to="interactable/Interact3" method="_on_timer_timeout"]
 [connection signal="body_entered" from="interactable/table" to="Player/CharacterBody2D" method="_on_table_body_entered"]
@@ -327,3 +357,6 @@ parameters/looping = true
 [connection signal="body_exited" from="interactable/curtains1" to="Player/CharacterBody2D" method="_on_curtains_1_body_exited"]
 [connection signal="body_entered" from="interactable/curtains2" to="Player/CharacterBody2D" method="_on_curtains_2_body_entered"]
 [connection signal="body_exited" from="interactable/curtains2" to="Player/CharacterBody2D" method="_on_curtains_2_body_exited"]
+[connection signal="body_entered" from="interactable/Area2D" to="Player/CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="interactable/Area2D" to="Player/CharacterBody2D" method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="MusicPlayer/Timer" to="." method="_on_timer_timeout"]
