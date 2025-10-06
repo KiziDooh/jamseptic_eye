@@ -218,6 +218,59 @@ func _physics_process(delta: float) -> void:
 				whichline = 2
 			elif whichline == 2 and Input.is_action_just_released("interact"):
 				whichline = 1
+		
 
+
+		if Input.is_action_just_pressed("ui_text_newline"):
+			close()
+	if help.room == "funeral":
+		placeholder = help.WhichInteractable
+		if help.WhichInteractable != placeholder:
+			whichline = 1
+			
+		if help.WhichInteractable == "mom":
+				if whichline == 1 and Input.is_action_just_released("interact"):
+					display_line("Why... why.. my poor sweet baby girl","mom")
+					whichline = 2
+				elif whichline == 2 and Input.is_action_just_released("interact"):
+					display_line("im sorry mom","you")
+					whichline = 3
+				elif whichline == 3 and Input.is_action_just_released("interact"):
+					whichline = 1
+					
+		if help.WhichInteractable == "fren":
+				if whichline == 1 and Input.is_action_just_released("interact"):
+					display_line("...")
+					whichline = 2
+				elif whichline == 2 and Input.is_action_just_released("interact"):
+					display_line("...","You")
+					whichline = 3
+				elif whichline == 3 and Input.is_action_just_released("interact"):
+					whichline = 1
+					get_tree().change_scene_to_file("res://scenes/2d/Fren_Car_Crash.tscn") 
+		
+		
+		
+
+
+		if Input.is_action_just_pressed("ui_text_newline"):
+			close()
+			
+	if help.room == "crash":
+		placeholder = help.WhichInteractable
+		if help.WhichInteractable != placeholder:
+			whichline = 1
+			
+		if help.WhichInteractable == "deadboi":
+				if whichline == 1 and Input.is_action_just_released("interact"):
+					display_line("","")
+					whichline = 2
+				elif whichline == 2 and Input.is_action_just_released("interact"):
+					display_line("","")
+					whichline = 3
+				elif whichline == 3 and Input.is_action_just_released("interact"):
+					whichline = 1
+					get_tree().change_scene_to_file("res://scenes/2d/dead.tscn") 
+					
 		if Input.is_action_just_pressed("ui_text_newline"):
 			close()

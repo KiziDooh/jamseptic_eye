@@ -16,6 +16,9 @@ func _process(delta: float) -> void:
 	pointer("Couch",$"../Couch")
 	pointer("curtains1",$"../curtains1")
 	pointer("curtains2",$"../curtains2")
+	pointer("mom",$"../mom")
+	pointer("fren",$"../fren")
+	pointer("deadboi",$"../deadboi")
 	
 	if help.room == "bedroom":
 		if help.knock == true:
