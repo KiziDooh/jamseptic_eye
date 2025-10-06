@@ -1,3 +1,77 @@
-[gd_scene load_steps=0 format=3 uid="uid://1df1x8vcb6t3"]
+[gd_scene load_steps=4 format=3 uid="uid://1df1x8vcb6t3"]
+
+[ext_resource type="Texture2D" uid="uid://drob5wnqmmvuc" path="res://visuals/UI/Screenshot 2025-10-05 210650.png" id="1_ag5a4"]
+[ext_resource type="FontFile" uid="uid://dc4demacjh02" path="res://visuals/Fonts/boldpixels/Scabber-q2Mn0.ttf" id="2_xr0mk"]
+[ext_resource type="Texture2D" uid="uid://ic2urb0veya7" path="res://visuals/2d/Friend Sprites/huggies.png" id="3_nlh21"]
 
 [node name="Credits" type="Node2D"]
+
+[node name="Screenshot20251005210650" type="Sprite2D" parent="."]
+position = Vector2(618, 316)
+scale = Vector2(1.1993127, 1.1993127)
+texture = ExtResource("1_ag5a4")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 712.0
+offset_top = 196.0
+offset_right = 937.0
+offset_bottom = 226.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_xr0mk")
+theme_override_font_sizes/font_size = 30
+text = "Niightcrawler"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 245.0
+offset_top = 370.0
+offset_right = 470.0
+offset_bottom = 400.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_xr0mk")
+theme_override_font_sizes/font_size = 30
+text = "Phobophobia"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 724.0
+offset_top = 374.0
+offset_right = 949.0
+offset_bottom = 404.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_xr0mk")
+theme_override_font_sizes/font_size = 30
+text = "Kizi"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 398.0
+offset_top = 575.0
+offset_right = 781.0
+offset_bottom = 625.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_xr0mk")
+theme_override_font_sizes/font_size = 50
+text = "\"Stay Alive <3\""
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 451.0
+offset_top = 28.0
+offset_right = 699.0
+offset_bottom = 78.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_xr0mk")
+theme_override_font_sizes/font_size = 50
+text = "FrenSoft"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 206.0
+offset_top = 196.0
+offset_right = 431.0
+offset_bottom = 226.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_xr0mk")
+theme_override_font_sizes/font_size = 30
+text = "NoodlesNoodles"
+
+[node name="Huggies" type="Sprite2D" parent="."]
+position = Vector2(583, 326)
+scale = Vector2(0.22643565, 0.22643565)
+texture = ExtResource("3_nlh21")

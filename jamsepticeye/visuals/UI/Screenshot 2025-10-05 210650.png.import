@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5aco5fh4yny7"
-path="res://.godot/imported/hang_in_there.png-d6a21af52f843c4eaebe70127056218a.ctex"
+uid="uid://drob5wnqmmvuc"
+path="res://.godot/imported/Screenshot 2025-10-05 210650.png-f96d8e1cc93734f3eb67838921d15446.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/2d/player sprites/hang_in_there.png"
-dest_files=["res://.godot/imported/hang_in_there.png-d6a21af52f843c4eaebe70127056218a.ctex"]
+source_file="res://visuals/UI/Screenshot 2025-10-05 210650.png"
+dest_files=["res://.godot/imported/Screenshot 2025-10-05 210650.png-f96d8e1cc93734f3eb67838921d15446.ctex"]
 
 [params]
 
