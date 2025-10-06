@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://fdynu4wjls35"]
+[gd_scene load_steps=7 format=3 uid="uid://ds17o7ajt0lc7"]
 
-[ext_resource type="Script" uid="uid://crsgy161eapl6" path="res://scenes/2d/main_menu.gd" id="1_u77uy"]
+[ext_resource type="Script" path="res://scenes/2d/main_menu.gd" id="1_u77uy"]
 [ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="1_uvd46"]
 [ext_resource type="Shader" uid="uid://bsfq443vyupx2" path="res://visuals/Shaders/crt.gdshader" id="2_k62s8"]
 [ext_resource type="Texture2D" uid="uid://bi3hqk8xk3tab" path="res://visuals/UI/MenuBackgroun.png" id="3_k62s8"]

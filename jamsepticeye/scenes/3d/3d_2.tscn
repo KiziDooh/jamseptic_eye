@@ -1,7 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b6l1crjiw5cd8"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://player/brackeys-proto-controller-main/proto_controller/proto_controller.tscn" id="1_hgcrj"]
-[ext_resource type="Texture2D" uid="uid://cvvh5d0rh70xd" path="res://placeholders/placeholder_1.png" id="2_jac57"]
+[ext_resource type="Script" uid="uid://bs1cubtqggres" path="res://3d_2.gd" id="1_jac57"]
+[ext_resource type="Texture2D" uid="uid://ic2urb0veya7" path="res://visuals/2d/Friend Sprites/huggies.png" id="3_kf0fa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kf0fa"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -12,23 +13,16 @@ sky_material = SubResource("ProceduralSkyMaterial_kf0fa")
 
 [sub_resource type="Environment" id="Environment_ama4d"]
 background_mode = 2
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_l6aig")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_df7aa"]
-transparency = 1
-stencil_mode = 3
-stencil_flags = 2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02iq1"]
-render_priority = 1
-transparency = 1
-stencil_mode = 3
-stencil_flags = 1
-stencil_compare = 2
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6aig"]
+size = Vector3(8.232422, 8.040039, 4.8720703)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_jac57")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -42,15 +36,32 @@ use_collision = true
 size = Vector3(46.129883, 1, 36.004883)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
-transparency = 1.0
-size = Vector3(2.913086, 3.819336, 1)
-material = SubResource("StandardMaterial3D_df7aa")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.764992, 0, 0)
+size = Vector3(1, 12.836182, 34.40625)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.619602, 0, 0)
+size = Vector3(1, 12.836182, 34.40625)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 7.2179413, 0, -14.206598)
+size = Vector3(1, 12.836182, 62.857178)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 7.2179413, 0, 16.998434)
+size = Vector3(1, 12.836182, 62.857178)
 
 [node name="ProtoController" parent="." instance=ExtResource("1_hgcrj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7034445, 0.5, -0.86828053)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7034445, 0.5, -5.458109)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23143, 0)
-material_override = SubResource("StandardMaterial3D_02iq1")
-texture = ExtResource("2_jac57")
+[node name="huggies" type="Sprite3D" parent="."]
+transform = Transform3D(0.19, 0, 0, 0, 0.19, 0, 0, 0, 0.19, 0, 2.2950988, 11.570144)
+texture = ExtResource("3_kf0fa")
+
+[node name="hugs" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 11)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hugs"]
+shape = SubResource("BoxShape3D_l6aig")
+
+[connection signal="body_entered" from="hugs" to="ProtoController" method="_on_hugs_body_entered"]

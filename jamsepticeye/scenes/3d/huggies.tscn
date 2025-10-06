@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdnfng2jb2wlh"]
+
+[ext_resource type="Texture2D" uid="uid://ic2urb0veya7" path="res://visuals/2d/Friend Sprites/huggies.png" id="1_axr5o"]
+[ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="2_q2k2m"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Huggies" type="Sprite2D" parent="."]
+position = Vector2(628, 1071)
+texture = ExtResource("1_axr5o")
+
+[node name="PixilLayer0" type="Sprite2D" parent="Huggies"]
+z_index = -1
+position = Vector2(250.00002, 663.00006)
+scale = Vector2(0.65410256, 0.85410255)
+texture = ExtResource("2_q2k2m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(631, 384)
