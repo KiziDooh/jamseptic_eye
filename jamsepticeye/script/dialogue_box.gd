@@ -243,7 +243,7 @@ func _physics_process(delta: float) -> void:
 					display_line("I should have done more","Travis")
 					whichline = 2
 				elif whichline == 2 and Input.is_action_just_released("interact"):
-					display_line("Beem there more","Travis")
+					display_line("Been there more","Travis")
 					whichline = 3
 				elif whichline == 3 and Input.is_action_just_released("interact"):
 					display_line("You whre there","Harper")
