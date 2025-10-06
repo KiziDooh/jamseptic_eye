@@ -88,24 +88,24 @@ func _physics_process(delta: float) -> void:
 			
 	if help.room == "tv":
 		if whichline == 1:
-				display_line("Wasn't expecting you... It's been a while","player")
+				display_line("Wasn't expecting you... It's been a while","Harper")
 				whichline = 2
 		elif whichline == 2 and Input.is_action_just_released("interact"):
 			help.friendspeak = 1
 			whichline = 3
 		elif help.friendspeak == 4:
-			display_line("i'll think about it..","player")
+			display_line("i'll think about it..","Harper")
 			help.friendspeak = 0
 			whichline = 5
 		elif whichline == 5 and Input.is_action_just_released("interact"):
-			display_line("I missed you tho...")
+			display_line("I missed you tho...","Harper")
 			whichline = 6
 		elif whichline == 6 and Input.is_action_just_released("interact"):
 			help.friendspeak = 5
 			whichline = 0
 			close()
 		elif help.friendspeak == 20:
-			display_line("Woooooaaahhh... you missed yourself")
+			display_line("Woooooaaahhh... you missed yourself","Harper")
 			whichline = 7
 			help.friendspeak = 0
 		elif whichline == 7 and Input.is_action_just_released("interact"):
@@ -113,7 +113,7 @@ func _physics_process(delta: float) -> void:
 			whichline = 0
 			close()
 		elif help.friendspeak == 9:
-			display_line("as if")
+			display_line("as if","Harper")
 			whichline = 10
 			help.friendspeak = 0
 		elif whichline == 10 and Input.is_action_just_released("interact"):
@@ -122,7 +122,7 @@ func _physics_process(delta: float) -> void:
 			help.friendspeak = 10
 			
 		elif help.friendspeak == 12:
-			display_line("im litterly NOT shut up!!")
+			display_line("im litterly NOT shut up!!","Harper")
 			whichline = 11
 			help.friendspeak = 13
 		elif whichline == 11 and Input.is_action_just_released("interact"):
@@ -132,13 +132,13 @@ func _physics_process(delta: float) -> void:
 		elif help.friendspeak == 16:
 			whichline = 12
 			help.friendspeak = 0
-			display_line("im sorry...")
+			display_line("im sorry...","Harper")
 		elif whichline == 12 and Input.is_action_just_released("interact"):
 			whichline = 0
 			close() 
 			help.friendspeak = 17
 		elif help.friendspeak == 19:
-			display_line("pssh over my dead body..")
+			display_line("pssh over my dead body..","Harper")
 			help.friendspeak = 21
 		
 		elif help.friendspeak == 21 and Input.is_action_just_released("interact"):
@@ -240,12 +240,27 @@ func _physics_process(delta: float) -> void:
 					
 		if help.WhichInteractable == "fren":
 				if whichline == 1 and Input.is_action_just_released("interact"):
-					display_line("...")
+					display_line("I should have done more","Travis")
 					whichline = 2
 				elif whichline == 2 and Input.is_action_just_released("interact"):
-					display_line("...","You")
+					display_line("Beem there more","Travis")
 					whichline = 3
 				elif whichline == 3 and Input.is_action_just_released("interact"):
+					display_line("You whre there","Harper")
+					whichline = 4
+				elif whichline == 4 and Input.is_action_just_released("interact"):
+					display_line("I didn't think anyone would care...","Harper")
+					whichline = 5
+				elif whichline == 5 and Input.is_action_just_released("interact"):
+					display_line("But I was wrong","Harper")
+					whichline = 6
+				elif whichline == 6 and Input.is_action_just_released("interact"):
+					display_line("She was my best friend always making me laugh","Travis")
+					whichline = 7
+				elif whichline == 7 and Input.is_action_just_released("interact"):
+					display_line("She meant so much to me","Travis")
+					whichline = 8
+				elif whichline == 8 and Input.is_action_just_released("interact"):
 					whichline = 1
 					get_tree().change_scene_to_file("res://scenes/2d/Fren_Car_Crash.tscn") 
 		
@@ -263,12 +278,18 @@ func _physics_process(delta: float) -> void:
 			
 		if help.WhichInteractable == "deadboi":
 				if whichline == 1 and Input.is_action_just_released("interact"):
-					display_line("","")
+					display_line("SOMEONE PLS HELP!!!","Harper")
 					whichline = 2
 				elif whichline == 2 and Input.is_action_just_released("interact"):
-					display_line("","")
+					display_line("OH GOD OH NO PLSS I BEG YOU PLS!!!","Harper")
 					whichline = 3
 				elif whichline == 3 and Input.is_action_just_released("interact"):
+					display_line("I BEG YOU!! PLS I BEG YOU!!","Harper")
+					whichline = 4
+				elif whichline == 4 and Input.is_action_just_released("interact"):
+					display_line("I WISH I WASN't DEAD I WISH I STAYED WITH YOU!!!","Harper")
+					whichline = 5
+				elif whichline == 5 and Input.is_action_just_released("interact"):
 					whichline = 1
 					get_tree().change_scene_to_file("res://scenes/2d/dead.tscn") 
 					

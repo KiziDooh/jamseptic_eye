@@ -44,6 +44,8 @@ extends CharacterBody3D
 ## Name of Input Action to toggle freefly mode.
 @export var input_freefly : String = "freefly"
 
+var lever = false
+
 var mouse_captured : bool = false
 var look_rotation : Vector2
 var move_speed : float = 0.0
@@ -54,6 +56,8 @@ var freeflying : bool = false
 @onready var collider: CollisionShape3D = $Collider
 
 func _ready() -> void:
+	
+	lever = true
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
@@ -180,8 +184,8 @@ func check_input_mappings():
 
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://scenes/3d/3d_2.tscn") 
-	print("wow")
+	lever = false
+	get_tree().change_scene_to_file("res://scenes/3d/3d_2.tscn") 	
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	$Timer.start()
