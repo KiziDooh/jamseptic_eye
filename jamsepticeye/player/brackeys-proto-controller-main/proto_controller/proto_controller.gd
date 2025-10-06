@@ -44,7 +44,6 @@ extends CharacterBody3D
 ## Name of Input Action to toggle freefly mode.
 @export var input_freefly : String = "freefly"
 
-var lever = false
 
 var mouse_captured : bool = false
 var look_rotation : Vector2
@@ -57,7 +56,6 @@ var freeflying : bool = false
 
 func _ready() -> void:
 	
-	lever = true
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
@@ -184,7 +182,6 @@ func check_input_mappings():
 
 
 func _on_timer_timeout() -> void:
-	lever = false
 	get_tree().change_scene_to_file("res://scenes/3d/3d_2.tscn") 	
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -192,5 +189,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 
 
+
+
+
 func _on_hugs_body_entered(body: Node3D) -> void:
 	get_tree().change_scene_to_file("res://scenes/3d/huggies.tscn") 
+
+
+func _on_hugs_2_body_entered(body: Node3D) -> void:
+	if help.fixitpls == true:
+		print("wow that was really cool")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://020m0jirat0i"]
+[gd_scene load_steps=12 format=3 uid="uid://020m0jirat0i"]
 
 [ext_resource type="Script" uid="uid://bjyjwk5fkoqlu" path="res://script/dead.gd" id="1_5sfs0"]
 [ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="1_8f3xj"]
@@ -9,6 +9,7 @@
 [ext_resource type="Shader" uid="uid://bsfq443vyupx2" path="res://visuals/Shaders/crt.gdshader" id="6_jblhf"]
 [ext_resource type="FontFile" uid="uid://buiasug3qyfrc" path="res://visuals/Fonts/boldpixels/BoldPixels.ttf" id="7_hvuha"]
 [ext_resource type="AudioStream" uid="uid://c3im6mo16w8mf" path="res://Sounds/Sfx/Wispers_of_Death_2.wav" id="9_dsb7u"]
+[ext_resource type="AudioStream" uid="uid://cvpyq0xru4q7" path="res://Sounds/Sfx/ambient.mp3" id="10_1oxjo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hvuha"]
 shader = ExtResource("6_jblhf")
@@ -96,6 +97,13 @@ stream = ExtResource("9_dsb7u")
 volume_db = -5.541
 pitch_scale = 0.59
 autoplay = true
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_1oxjo")
+volume_db = 6.599
+pitch_scale = 0.63
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

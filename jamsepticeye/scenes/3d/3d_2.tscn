@@ -20,7 +20,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6aig"]
-size = Vector3(4.4228516, 8.040039, 2.303711)
+size = Vector3(5.8066406, 4.7421875, 4.8066406)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_jac57")
@@ -53,16 +53,23 @@ transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 
 size = Vector3(1, 12.836182, 62.857178)
 
 [node name="ProtoController" parent="." instance=ExtResource("1_hgcrj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7034445, 0.5, -5.458109)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2965555, 0.5, -5.458109)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Timer" type="Timer" parent="ProtoController"]
 
 [node name="huggies" type="Sprite3D" parent="."]
 transform = Transform3D(0.19, 0, 0, 0, 0.19, 0, 0, 0, 0.19, 0, 2.2950988, 11.570144)
 texture = ExtResource("3_kf0fa")
 
 [node name="hugs" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 11)
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 7.1525574e-07, -2.2928472, 7.0000005)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hugs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6620483, 4.749067)
 shape = SubResource("BoxShape3D_l6aig")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -70,4 +77,15 @@ stream = ExtResource("4_l6aig")
 autoplay = true
 parameters/looping = true
 
+[node name="hugs2" type="Area3D" parent="."]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 7.1525574e-07, -2.2928472, 7.0000005)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hugs2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6620483, 4.749067)
+shape = SubResource("BoxShape3D_l6aig")
+
+[connection signal="timeout" from="ProtoController/Timer" to="ProtoController" method="_on_timer_timeout"]
 [connection signal="body_entered" from="hugs" to="ProtoController" method="_on_hugs_body_entered"]
+[connection signal="body_entered" from="hugs2" to="ProtoController" method="_on_hugs_2_body_entered"]

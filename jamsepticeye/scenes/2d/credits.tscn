@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://1df1x8vcb6t3"]
+[gd_scene load_steps=6 format=3 uid="uid://1df1x8vcb6t3"]
 
 [ext_resource type="Texture2D" uid="uid://drob5wnqmmvuc" path="res://visuals/UI/Screenshot 2025-10-05 210650.png" id="1_ag5a4"]
-[ext_resource type="Script" uid="uid://b1cj0avdyoy1c" path="res://script/credits.gd" id="1_xr0mk"]
+[ext_resource type="Script" path="res://script/credits.gd" id="1_xr0mk"]
 [ext_resource type="FontFile" uid="uid://dc4demacjh02" path="res://visuals/Fonts/boldpixels/Scabber-q2Mn0.ttf" id="2_xr0mk"]
 [ext_resource type="Texture2D" uid="uid://ic2urb0veya7" path="res://visuals/2d/Friend Sprites/huggies.png" id="3_nlh21"]
+[ext_resource type="AudioStream" uid="uid://pev881hjg7th" path="res://Sounds/Musics/Death Game End Credits.mp3" id="4_xr0mk"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_xr0mk")
@@ -105,5 +106,10 @@ theme_override_font_sizes/font_size = 25
 text = "988lifeline.org"
 underline = 1
 uri = "988lifeline.org"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xr0mk")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
