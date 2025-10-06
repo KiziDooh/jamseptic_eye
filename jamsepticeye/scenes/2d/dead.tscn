@@ -63,29 +63,31 @@ offset_bottom = 1094.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
+mouse_behavior_recursive = 2
 color = Color(0, 0.75350153, 0.16181213, 0.41568628)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -501.0
 offset_top = 140.0
 offset_right = 590.0
-offset_bottom = 289.0
+offset_bottom = 181.0
 theme_override_colors/font_color = Color(0.13333334, 0.69411767, 0.29803923, 1)
 theme_override_fonts/font = ExtResource("7_hvuha")
 theme_override_font_sizes/font_size = 40
 text = "Death has decided to give you an opurtunity. Take it?"
 
 [node name="Button" type="Button" parent="."]
-offset_left = -505.0
-offset_top = 173.0
-offset_right = -414.0
-offset_bottom = 242.0
+offset_left = -490.0
+offset_top = 192.0
+offset_right = -431.0
+offset_bottom = 224.0
 
 [node name="Button2" type="Button" parent="."]
-offset_left = -486.0
-offset_top = 246.0
-offset_right = -436.0
-offset_bottom = 284.0
+offset_left = -489.0
+offset_top = 239.0
+offset_right = -430.0
+offset_bottom = 283.0
 toggle_mode = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

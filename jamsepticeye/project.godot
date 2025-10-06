@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Jamsepticeye"
-run/main_scene="uid://c4bpge67gygc3"
+run/main_scene="uid://fdynu4wjls35"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://visuals/2d/icon.svg"
 
 [autoload]
 
 help="*res://script/Global.gd"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [input]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5aco5fh4yny7"
-path="res://.godot/imported/hang_in_there.png-d6a21af52f843c4eaebe70127056218a.ctex"
+uid="uid://bi3hqk8xk3tab"
+path="res://.godot/imported/MenuBackgroun.png-3792c5b42035fc06a360487e767e9f87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/2d/player sprites/hang_in_there.png"
-dest_files=["res://.godot/imported/hang_in_there.png-d6a21af52f843c4eaebe70127056218a.ctex"]
+source_file="res://visuals/UI/MenuBackgroun.png"
+dest_files=["res://.godot/imported/MenuBackgroun.png-3792c5b42035fc06a360487e767e9f87.ctex"]
 
 [params]
 
