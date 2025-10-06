@@ -19,7 +19,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6aig"]
-size = Vector3(8.232422, 8.040039, 4.8720703)
+size = Vector3(4.4228516, 8.040039, 2.303711)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_jac57")
