@@ -1,19 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdnfng2jb2wlh"]
+[gd_scene load_steps=6 format=3 uid="uid://bdnfng2jb2wlh"]
 
 [ext_resource type="Texture2D" uid="uid://ic2urb0veya7" path="res://visuals/2d/Friend Sprites/huggies.png" id="1_axr5o"]
+[ext_resource type="Script" uid="uid://b3lijhhqkyw63" path="res://script/huggies.gd" id="1_fdoft"]
 [ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="2_q2k2m"]
+[ext_resource type="PackedScene" uid="uid://e0b2u7tpphvv" path="res://scenes/Dialog_Box/dialogue_box2.tscn" id="4_q5lwy"]
+[ext_resource type="AudioStream" uid="uid://pev881hjg7th" path="res://Sounds/Musics/Death Game End Credits.mp3" id="5_q5lwy"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_fdoft")
 
 [node name="Huggies" type="Sprite2D" parent="."]
-position = Vector2(628, 1071)
+position = Vector2(623, 740)
+scale = Vector2(0.63, 0.63)
 texture = ExtResource("1_axr5o")
 
 [node name="PixilLayer0" type="Sprite2D" parent="Huggies"]
 z_index = -1
-position = Vector2(250.00002, 663.00006)
+position = Vector2(212.69843, 292.06348)
 scale = Vector2(0.65410256, 0.85410255)
 texture = ExtResource("2_q2k2m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(631, 384)
+
+[node name="dialogbox" type="Node" parent="."]
+
+[node name="Dialogue Box 2" parent="dialogbox" instance=ExtResource("4_q5lwy")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_q5lwy")
+autoplay = true
+parameters/looping = true

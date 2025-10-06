@@ -295,3 +295,10 @@ func _physics_process(delta: float) -> void:
 					
 		if Input.is_action_just_pressed("ui_text_newline"):
 			close()
+	if help.room == "hugs":
+		if whichline == 1:
+			display_line("I promise to never do that again")
+			whichline = 2
+		elif whichline == 2 and Input.is_action_just_released("interact"):
+			whichline = 1
+			get_tree().change_scene_to_file("res://scenes/2d/credits.tscn") 

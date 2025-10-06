@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds17o7ajt0lc7"]
+[gd_scene load_steps=8 format=3 uid="uid://ds17o7ajt0lc7"]
 
 [ext_resource type="Script" path="res://scenes/2d/main_menu.gd" id="1_u77uy"]
 [ext_resource type="Texture2D" uid="uid://iavqau0i2o81" path="res://visuals/2d/death/pixil-layer-0.png" id="1_uvd46"]
 [ext_resource type="Shader" uid="uid://bsfq443vyupx2" path="res://visuals/Shaders/crt.gdshader" id="2_k62s8"]
 [ext_resource type="Texture2D" uid="uid://bi3hqk8xk3tab" path="res://visuals/UI/MenuBackgroun.png" id="3_k62s8"]
 [ext_resource type="FontFile" uid="uid://dc4demacjh02" path="res://visuals/Fonts/boldpixels/Scabber-q2Mn0.ttf" id="4_d3yhd"]
+[ext_resource type="AudioStream" uid="uid://bmk8xjy1h8y2l" path="res://Sounds/Musics/Death Game End Credits 1.mp3" id="6_2qbj5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3yhd"]
 shader = ExtResource("2_k62s8")
@@ -88,6 +89,11 @@ theme_override_colors/font_color = Color(0.66, 0.10560002, 0.18875982, 1)
 theme_override_fonts/font = ExtResource("4_d3yhd")
 theme_override_font_sizes/font_size = 60
 text = "Thread"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2qbj5")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

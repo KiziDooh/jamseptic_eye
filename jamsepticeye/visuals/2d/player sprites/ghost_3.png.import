@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5aco5fh4yny7"
-path="res://.godot/imported/Hang_In_There.png-5a6a8524b05da8b36215efbcee8b5d31.ctex"
+uid="uid://cauvhowkmobet"
+path="res://.godot/imported/ghost_3.png-1c5d60368547febd092dc61cd4ed05bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/2d/player sprites/Hang_In_There.png"
-dest_files=["res://.godot/imported/Hang_In_There.png-5a6a8524b05da8b36215efbcee8b5d31.ctex"]
+source_file="res://visuals/2d/player sprites/ghost_3.png"
+dest_files=["res://.godot/imported/ghost_3.png-1c5d60368547febd092dc61cd4ed05bd.ctex"]
 
 [params]
 

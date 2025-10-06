@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://y3qdvvdmdirl"]
+[gd_scene load_steps=16 format=3 uid="uid://y3qdvvdmdirl"]
 
 [ext_resource type="Texture2D" uid="uid://dsxoav6wsvdvm" path="res://visuals/2d/room/actual room/window.png" id="1_0qy4d"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://player/brackeys-proto-controller-main/proto_controller/proto_controller.tscn" id="1_1u4jr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cp8ndta560y8b" path="res://visuals/2d/Friend Sprites/dead_boi.png" id="4_tyhrg"]
 [ext_resource type="Script" uid="uid://8xdfomxpjesc" path="res://scenes/3d/sprite_3d.gd" id="5_tyhrg"]
 [ext_resource type="AudioStream" uid="uid://bcssugycg3ih7" path="res://Sounds/Musics/PeanutDaze(1).mp3" id="9_tyhrg"]
+[ext_resource type="FontFile" uid="uid://l2vku8mto1dk" path="res://visuals/Fonts/boldpixels/BoldPixels.otf" id="10_q3t6n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1u4jr"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -516,6 +517,19 @@ material = SubResource("FogMaterial_jygum")
 stream = ExtResource("9_tyhrg")
 autoplay = true
 parameters/looping = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 478.0
+offset_top = 519.0
+offset_right = 682.0
+offset_bottom = 542.0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.20850128, 0.43596083, 0, 1)
+theme_override_colors/font_outline_color = Color(0.20152658, 0.20152658, 0.20152658, 1)
+theme_override_fonts/font = ExtResource("10_q3t6n")
+theme_override_font_sizes/font_size = 40
+text = "Save Him"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="CSGBox3D9/Area3D" to="ProtoController2" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="ProtoController2/Timer" to="ProtoController2" method="_on_timer_timeout"]

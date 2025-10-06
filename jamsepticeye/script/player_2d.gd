@@ -29,10 +29,15 @@ func _physics_process(delta: float) -> void:
 	
 	#idle and run
 	if direction == 0:
-		animated_sprite_2d.play("idle")
-		pass
+		if help.ghoosty == false:
+			animated_sprite_2d.play("idle")
+		else:
+			animated_sprite_2d.play("ghosty")
 	else:
-		animated_sprite_2d.play("walk")
+		if help.ghoosty == false:
+			animated_sprite_2d.play("walk")
+		else:
+			animated_sprite_2d.play("ghosty")
 	
 	if direction:
 		velocity.x = direction * SPEED

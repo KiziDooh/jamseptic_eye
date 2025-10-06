@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dsxoav6wsvdvm" path="res://visuals/2d/room/actual room/window.png" id="17_hawbc"]
 [ext_resource type="Texture2D" uid="uid://dojoawwkw6ccb" path="res://visuals/2d/room/room_silhouette/bed_silhouette.png" id="18_i5p4b"]
 [ext_resource type="Texture2D" uid="uid://beve81ownsdn4" path="res://visuals/2d/room/room_silhouette/boombox_silhouette.png" id="19_864u2"]
-[ext_resource type="Texture2D" uid="uid://d3vredche8pmk" path="res://visuals/2d/player sprites/Hang_In_There.png" id="20_2t5yg"]
+[ext_resource type="Texture2D" uid="uid://5aco5fh4yny7" path="res://visuals/2d/player sprites/Hang_In_There.png" id="20_2t5yg"]
 [ext_resource type="Texture2D" uid="uid://dnpchwtmxcdl2" path="res://visuals/2d/room/room_silhouette/couch_silhouette.png" id="20_j3jly"]
 [ext_resource type="Script" uid="uid://dayofw6wnfamd" path="res://script/interact_3.gd" id="20_unieu"]
 [ext_resource type="Texture2D" uid="uid://b0hvi7x5qfb7x" path="res://visuals/2d/room/room_silhouette/table_silhouette.png" id="21_4yrr0"]

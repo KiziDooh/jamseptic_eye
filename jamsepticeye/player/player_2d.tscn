@@ -1,11 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://caumklby5mno2"]
+[gd_scene load_steps=25 format=3 uid="uid://caumklby5mno2"]
 
 [ext_resource type="Script" uid="uid://xvtjx3hetoei" path="res://script/player_2d.gd" id="1_sy00s"]
 [ext_resource type="Texture2D" uid="uid://ct6mi15xisg2n" path="res://visuals/2d/player sprites/idle_1.png" id="2_6r7w4"]
 [ext_resource type="Texture2D" uid="uid://cj5nuebof1uv0" path="res://visuals/2d/player sprites/Idle_final_1.png" id="2_r7r2t"]
 [ext_resource type="Texture2D" uid="uid://dnc7m6pi35mb1" path="res://visuals/2d/player sprites/20251002_082737.jpg" id="2_u8lj1"]
+[ext_resource type="Texture2D" uid="uid://cblval3mur58" path="res://visuals/2d/player sprites/ghost_2.png" id="2_uqkuw"]
+[ext_resource type="Texture2D" uid="uid://cauvhowkmobet" path="res://visuals/2d/player sprites/ghost_3.png" id="3_a5u1y"]
 [ext_resource type="Texture2D" uid="uid://usp0m6yjd56m" path="res://visuals/2d/player sprites/idle_2.png" id="3_ftsyd"]
 [ext_resource type="Texture2D" uid="uid://dv5x0f7a68ho8" path="res://visuals/2d/player sprites/Idle_final_2.png" id="3_x4f0t"]
+[ext_resource type="Texture2D" uid="uid://cyqxmimlwh7rd" path="res://visuals/2d/player sprites/ghost_1.png" id="4_2yfvn"]
 [ext_resource type="Texture2D" uid="uid://3jadost84biv" path="res://visuals/2d/player sprites/walk_1.png" id="5_bbya4"]
 [ext_resource type="Texture2D" uid="uid://3n8skuve44vq" path="res://visuals/2d/player sprites/walk_final_1.png" id="5_gniu2"]
 [ext_resource type="Texture2D" uid="uid://dbhyd50wwhbid" path="res://visuals/2d/player sprites/walk_final_2.png" id="6_pgwpd"]
@@ -34,6 +37,20 @@ region = Rect2(734, 0, 366, 1200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7fikk"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uqkuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a5u1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2yfvn")
+}],
+"loop": true,
+"name": &"ghosty",
+"speed": 2.5
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_r7r2t")
@@ -131,9 +148,9 @@ script = ExtResource("1_sy00s")
 position = Vector2(-38, 126)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_7fikk")
-animation = &"idle"
+animation = &"ghosty"
 autoplay = "idle"
-frame_progress = 0.7207987
+frame_progress = 0.6156244
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-21, 312)

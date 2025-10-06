@@ -4,3 +4,4 @@ var room: String = "title"
 var friendspeak = 0
 var knock = false
 var dying = false
+var ghoosty = false

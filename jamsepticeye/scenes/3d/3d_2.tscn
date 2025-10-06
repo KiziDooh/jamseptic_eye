@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6l1crjiw5cd8"]
+[gd_scene load_steps=9 format=3 uid="uid://b6l1crjiw5cd8"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://player/brackeys-proto-controller-main/proto_controller/proto_controller.tscn" id="1_hgcrj"]
-[ext_resource type="Script" uid="uid://bs1cubtqggres" path="res://3d_2.gd" id="1_jac57"]
+[ext_resource type="Script" uid="uid://bs1cubtqggres" path="res://script/3d_2.gd" id="1_jac57"]
 [ext_resource type="Texture2D" uid="uid://ic2urb0veya7" path="res://visuals/2d/Friend Sprites/huggies.png" id="3_kf0fa"]
+[ext_resource type="AudioStream" uid="uid://bcssugycg3ih7" path="res://Sounds/Musics/PeanutDaze(1).mp3" id="4_l6aig"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kf0fa"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -63,5 +64,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 11)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hugs"]
 shape = SubResource("BoxShape3D_l6aig")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_l6aig")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="hugs" to="ProtoController" method="_on_hugs_body_entered"]
